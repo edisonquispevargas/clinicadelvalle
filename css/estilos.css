@@ -1,0 +1,597 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'open sans';
+}
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo{
+    color: #00bdcc;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* header*/
+
+header{
+    width:  100%;
+    height:  600px;
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(317, 80%, 76%, 0.664), hsla(123, 77%, 71%, 0.459)), url(../images/clinica.jpg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(317, 80%, 76%, 0.664), hsla(123, 77%, 71%, 0.459)), url(../images/clinica.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+    background-color: #2b3ff3;
+
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+
+
+    
+    
+}
+nav > a{
+    color: #fff;
+    /*font-weight: 300;*/
+    text-decoration:  none;
+    margin-right: 20px;
+    font-size: 17px;
+   
+    
+    
+}
+.logo{
+    text-align: left;
+    position: static;
+}
+nav > a:hover{
+    text-decoration: underline;
+    color: #000;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color: #fff;
+
+}
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+    
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*about us */
+main.sobre-nosotros{
+padding: 10px 0 60px 0;
+}
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+}
+.imagen-about-us{
+    width: 48%;
+}
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+.contenido-textos h3{
+    margin-bottom: 10px;
+
+}
+.contenido-textos h3 span{
+    background: #00bdcc;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); 
+    margin-right: 5px;
+}
+
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* galeria */
+.portafolio{
+    background: #f2f2f2;
+}
+.galeria-port{
+    display:  flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-port{
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); 
+}
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(192, 63%, 43%, 0.7);
+    transition: transform .5s;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hover-galeria img{
+    width: 50px;
+
+}
+.hover-galeria p{
+    color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+
+/* clientes*/
+
+.cards{
+    display:  flex;
+    justify-content: space-evenly;
+}
+
+.cards .card{
+    background: #4d0686;
+    display: flex;
+    width: 46%;
+    height: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .6); 
+}
+.cards .card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card > .contenido-texto-card{
+    width: 90%;
+    color: #00bdcc;
+}
+
+.cards .card >.contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/* our team*/
+
+.about-services{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+.servicio-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 28%;
+    text-align: center;
+
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+
+.servicio-ind h3{
+    margin: 10px 0;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+footer{
+    background: #414141;
+    padding: 10px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.content-foo{
+    text-align: center;
+}
+.content-foo h4{
+    color: #00bdcc;
+    border-bottom: 3px solid #fff;
+    
+}
+.content-foo p{
+    color: #ccc;
+    
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+    }
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+    .imagen-about-us{
+        width: 90%;
+    }
+
+    /* galeria */
+    .imagen-port{
+        width: 40%;
+    }
+    /*clientes*/
+
+    .cards{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .cards .card{
+        width: 90%;
+        height: 500px;
+    }
+    .cards .card:first-child{
+        margin-bottom: 30px;
+    }
+
+    .servicio-cont{
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+    }
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+    .servicio-ind img{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+
+    }
+    nav > a{
+        margin-right: 5px;
+    }
+    .textos-header h1{
+        font-size: 35px;
+    }
+    .textos-header h2{
+        font-size: 20px;
+ 
+    }
+
+    .imagen-about-us{
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 95%;
+    }
+    /*galeria */
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* cliente*/
+    .cards .card{
+       height: 450px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    .cards .card img{
+        width: 90px;
+        height: 90px;
+    }
+    /*footer*/
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .content-foo h4{
+        border:  none;
+    }
+
+    .content-foo h4{
+        color:#ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px; 
+    }
+    .titulo-final{
+        font-size: 20px;
+    }
+}
+
+
+/*redes sociales*/
+/* footer */
+
+
+.agileinfo-icons ul li {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 1.5em;
+   float:right;
+    margin-top: -30px;
+}
+.agileinfo-icons ul li:nth-child(2){
+        margin-right: 10px;
+    }
+.agileinfo-icons ul li:nth-child(1){
+        margin-right: 300px;
+    }
+
+.agileinfo-copyright a:hover,.agileinfo-icons ul li a:hover{
+	color:#f4792c;
+}
+
+
+
+
+/*copia*/
+
+
+.navegar{
+    background-color: #2954a2;
+}
+.beautiful a:hover{
+    background-color: #2b4b85;
+}
+
+/*PHOTOS SLIDER*/
+.welcome{
+    margin-bottom: 36vh;
+    padding-top: 2em;
+}
+.welcome h3{
+    text-align: center;
+    font-size: 3.5em;
+    color: #fff;
+    letter-spacing: 4px;
+}
+.welcome h3 span{
+    color: #ff8000;
+}
+.welcome h4{
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+    margin: 2em 0 1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.myimg h2{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+}
+.ban{
+    background-size: cover;
+    position: relative;
+    display: flex;
+    background-attachment: fixed;
+}
+.ban:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    opacity: 0.5;
+    position: absolute;
+}
+
+/*ABOUT US*/
+.myabout h2{
+    color: #2954A2;
+    font-size:2.5em;
+    font-weight:600;
+}
+.myabout h5{
+    font-size: 1.4em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color:#b5b5b5;
+}
+.myabout p{
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.8em;
+    font-style:"PT sans",sans-serif;
+    color: rgb(107, 105, 105);
+}
+
+/*SCORE*/
+.numscroller{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #f4792c;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+.stat2 p{
+    color: #2954a2;
+    font-size: 1.8em;
+    text-transform: capitalize;
+}
+
+/*PORTAFOLIO*/
+.porta p{
+    font-size: 1.1em;
+    font-weight: 100;
+    line-height: 1em;
+    font-style:"PT sans",sans-serif;
+    color: rgb(107, 105, 105);
+}
+.title h4{
+    color:#00bdcc;
+    font-style:"PT sans",sans-serif;
+}
+
+/*COMUNICADOS*/
+table {
+    border-collapse:separate;
+    border-spacing: 5;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+  }
+.file i{
+    font-size: 4em; 
+    margin-left: 5px;
+}
+.alinear{
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+/*STAFF*/
+.mystaff h3{
+    color: #00bdcc;
+    font-size:2.5em;
+    font-weight:600;
+}
+.cob{
+    background-color: #2954A2;
+}
+.cob h4{
+	color: #fe423f;
+}
+.cob p{
+    color: aliceblue;
+}
+.img{
+    border-radius: 7%;
+}
+
+/*CONTACT*/
+.stitle{
+    background-color: #f4792c;
+    height:10%;
+    align-items: center;
+    color:white;
+    font-size: 1.1em;
+}
+.stitle i{
+    color: #2954A2;
+}
+.stitle a{
+    color: white;
+    text-decoration: none;
+}
+
+/*Footer*/
+.foot{
+    padding: 1.3em 0 1em;
+    background: #2954a2;
+}
+.agileinfo-icons ul li a {
+    color: #fff;
+}
+.agileinfo-copyright p,.agileinfo-copyright a{
+	 color: #fff;
+}

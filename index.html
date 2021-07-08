@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica del Valle</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+   <!--menu navigation-->
+    <nav class="navbar navbar-dark logis">
+         <a class="navbar-brand " href="#" style="color: blue;margin-left: 150px;text-decoration: none">
+               <img src="images/logo.jpg" alt="" width="50" height="50">
+               Clinica del valle
+           </a>
+           
+           <div style="margin-left: 480px">
+             <a href="php/paciente_l_r.php" class="btn btn-secondary"><i ></i>Portal Paciente</a>
+         </div>
+        <div style="margin-left: 20px">
+             <a href="hms/doctor/index.php" class="btn btn-info"><i ></i>Portal doctor</a>
+         </div>
+        <div style="margin-right: 70px">
+             <a href="hms/admin/index.php" class="btn btn-info"><i class="fas fa-sign-in-alt"></i>Admin</a>
+         </div>
+       </nav>
+   <nav class="navbar navbar-dark  navbar-expand-lg  navegar">
+    <div class="container-fluid navegar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+        <div class="collapse navbar-collapse primary" id="navbarSupportedContent">
+         <div class="navbar-nav me-auto ms-auto text-center fs-6 text-uppercase lh-lg beautiful">
+           <a class="nav-link active" href="index.html">Inicio</a>
+           <a class="nav-link ms-2" href="#nosotros">Nosotros</a>
+           <a class="nav-link ms-2" href="#portafolio">Portafolio</a>
+           <a class="nav-link ms-2" href="#especialidades">Especialidades</a>
+           <a class="nav-link ms-2" href="#equipo">Equipo</a>
+           <a class="nav-link ms-2" href="contact.php">Contacto</a>
+         </div>
+         
+       </div>
+    </div>
+ </nav>
+
+<!--banner-Slider carrousel-->
+<div id="carouselExampleControl" class="carousel slide position-relative" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active ban" style="height: 93vh;" data-bs-interval="4000">
+            <img src="images/clinica.jpg" class="w-100 img-fluid" alt="">
+            <div class="carousel-caption d-none d-md-block welcome">
+                
+                <h3><span>C</span>linica del <span>V</span>alle - <span>A</span>ndahuaylas</h3>
+                <h4>Tu salud y la de tu familia en las mejores manos</h4>
+            </div>
+        </div>
+        <div class="carousel-item ban" style="height: 93vh;" data-bs-interval="4000">
+            <img src="images/vision.jpg" class="w-100 img-fluid" alt="">
+            <div class="carousel-caption d-none d-md-block welcome">
+               
+                <h3><span>C</span>linica del <span>V</span>alle - <span>A</span>ndahuaylas</h3>
+                <h4>Tu salud y la de tu familia en las mejores manos</h4>
+            </div>
+        </div>
+        <div class="carousel-item ban" style="height: 93vh;" data-bs-interval="4000">
+            <img src="images/port.jpg" class="w-100 img-fluid" alt="">
+            <div class="carousel-caption d-none d-md-block welcome">
+               
+                <h3><span>C</span>linica del <span>V</span>alle - <span>A</span>ndahuaylas</h3>
+                <h4>Tu salud y la de tu familia en las mejores manos</h4>
+            </div>
+        </div>
+        <div class="carousel-item ban" style="height: 93vh;" data-bs-interval="4000">
+            <img src="images/nos.png" class="w-100 img-fluid" alt="">
+            <div class="carousel-caption d-none d-md-block welcome">
+                <h3><span>C</span>linica del <span>V</span>alle - <span>A</span>ndahuaylas</h3>
+                <h4>Tu salud y la de tu familia en las mejores manos</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--mision y vision-->
+        <section class="contenedor sobre-nosotros" id="nosotros">
+            <h2 class="titulo">Acerca de nosotros</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="images/nos.png" alt="" class="imagen-about-us" style="height: 550px;">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Misión</h3>
+                    <p>Brindar a toda la comunidad servicios de salud de alta complejidad,
+                         con la más alta calidad asistencial, tecnología de última generación, 
+                         moderna infraestructura y el máximo profesionalismo; así mismo ofrecer a
+                          sus colaboradores y profesionales un ámbito de desarrollo atractivo que 
+                          favorezca su compromiso y sentido de pertenencia a la Institución.</p>
+                    <button type="button" class="btn btn-info" style="margin-top: -70px; margin-left: 17px">
+                        Leer más
+                      </button>
+                    <h3><span>2</span>Visión</h3>
+                    <p>Ser el centro de referencia en servicios de salud en la región, brindando calidad 
+                        y excelencia médica, basados en el uso de tecnología de avanzada al servicio del
+                         humanismo medico, haciendo énfasis en la prevención y la educación continua.</p>
+                    <button type="button" class="btn btn-info" style="margin-top: -70px; margin-left: 17px"
+                    data-bs-toggle="modal" data-bs-target="#modal1">
+                        Leer más
+                      </button>
+
+                      <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Clinica del valle</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!--Plantilla comunicado-->
+                                    <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                        <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                        <tr>
+                                            <img src="images/vision.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                        </tr>
+                              
+                                        <tr>
+                                            <td style='font-family: Times, serif;'>
+                                                <h2 style='text-align: center;font-size: 25px; font-family:Cardana; '><u>Visión</u></h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style=' text-align: justify;'>
+                                                    <p style='margin: 2px; font-size: 14px;'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                                        Eius ducimus obcaecati corrupti aspernatur et? Mollitia a velit quas autem, cupiditate, inventore
+                                                         natus iusto eligendi doloremque ipsa sunt explicabo, enim nam?</br></br></p>
+                                                    <p class="text-end">Andahuaylas, 11 de septiembre de 2020 </br></br></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--FIN PLANTILLA-->
+                                </div>
+                    
+                </div>
+            </div>
+        </section>
+
+<!--portafolio-->
+        
+        <section class="portafolio" id="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <div class=" galeria-port">
+                    <div class="imagen-port">
+                        <img src="images/port.jpg" alt="" >
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal7">
+                            <img src="images/icono1.png" alt="" >
+                            <p>Clinica del Valle</p>
+                            </div>
+                            <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/port.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot2.png" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal10">
+                            <img src="images/icono1.png" alt="" >
+                            <p>Clinica del valle</p>
+                        </div>
+                        <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot2.png" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot1.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal11">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot1.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot3.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal12">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal12" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot3.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot4.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal13">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal13" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot4.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot5.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal14">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal14" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot5.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/fot6.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal15">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal15" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/fot6.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="images/port.jpg" alt="">
+                        <div class="hover-galeria" data-bs-toggle="modal" data-bs-target="#modal16">
+                            <img src="images/icono1.png" alt="">
+                            <p>Clinica del valle</p>
+                        </div>
+                         <div class="modal fade" id="modal16" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Clinica del valle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--Plantilla comunicado-->
+                                            <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                                <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                                <tr>
+                                                    <img src="images/port.jpg" alt="" class="imagen-about-us" style="height: 400px; width: 100%;"> 
+                                                </tr>
+                                      
+                                            </table>
+                                            <!--FIN PLANTILLA-->
+                                        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <!--ESPECIALIDADES-->
+    <section class="container mystaff mt-5" id="especialidades">
+        <h3 class="text-center mt-5 pt-4">Especialidades</h3>
+        <div class="alinear mt-5">
+            <div class="w-30 p-2">
+                 <div class="card" style="width: 23.1rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><u>Radiología</u></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Dr. Manuel Alfonzo</h6>
+                      <p class="text-justify fst-italic">ransfontanelar, tiroides, Tórax, mamas, hombro, rodilla, hígado vesícula páncreas, bazo, riñones, vejiga</p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal20">
+                        Leer más
+                      </button>
+                      <!-- Modal -->
+                        <div class="modal fade" id="modal20" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Clinica del valle</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <!--Plantilla comunicado-->
+                                       <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                        <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                        <tr>
+                                            <td style='text-align: center; padding: 0; display: flex; justify-content: space-between'>
+                                                <img width='90%' style='margin: 1.5% auto; text-align: left' src='images/nos.png'>
+                                            </td>
+                                        </tr>
+                              
+                                        <tr>
+                                            <td style='font-family: Times, serif;'>
+                                                <h2 style='text-align: center;font-size: 25px; font-family:Cardana; '><u>Radiologia</u></h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style=' text-align: justify;'>
+                                                    <p style='margin: 2px; font-size: 14px;'>
+                                                        ✔️ECOGRAFÍA 4D, DOPPLER COLOR
+                                                        ✅Transfontanelar, tiroides, Tórax, mamas, hombro, rodilla, hígado vesícula páncreas, bazo, riñones, vejiga, próstata, testículos, útero, y anexos, partes blandas, gestantes, genética, y morfología fetal, etc.<br>
+
+                                                        ✔️Atención de Lunes a Sábado de 8 am a 8pm y domingos de: 8:00 am a 1:00 pm
+                                                        📍Jr Hugo Pesce 350 - A
+                                                        Se hace visitas domiciliarias
+                                                        Teléfonos: 997952888 - 083 203052</br></br></p>
+                                                    <p class="text-end">Andahuaylas, junio de 2021 </br></br></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                 <button type="button" class="btn btn-primary" style="margin-top: -20px" >
+                                                                    Ver mas especialidades
+                                                 </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--FIN PLANTILLA-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-30 p-2">
+                <div class="card" style="width: 23.1rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><u>Traumatológia</u></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Dr. Clay Quispe Medina</h6>
+                      <p class="text-justify fst-italic">✅Fracturas, Esguinces y Luxaciones en niños y adultos
+                                                            ✅Prótesis en rodilla y cadera
+                                                            ✅Artroscopia de rodilla</p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+                        Leer más
+                      </button>
+                      <!-- Modal -->
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Clinica del valle</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <!--Plantilla comunicado-->
+                                       <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                        <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                        <tr>
+                                            <td style='text-align: center; padding: 0; display: flex; justify-content: space-between'>
+                                                <img width='90%' style='margin: 1.5% auto; text-align: left' src='images/traum.jpg'>
+                                            </td>
+                                        </tr>
+                              
+                                        <tr>
+                                            <td style='font-family: Times, serif;'>
+                                                <h2 style='text-align: center;font-size: 25px; font-family:Cardana; '><u>Traumatológia</u></h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style=' text-align: justify;'>
+                                                <p style='margin: 2px; font-size: 14px;'>‼️TRAUMATÓLOGO A TU DISPOSICIÓN ‼️<br>
+                                                Dr. Clay Quispe Medina, Especialista en Traumatología y Ortopedia<br>
+                                                ✔️TRATAMIENTOS<br>
+                                                ✅Fracturas, Esguinces y Luxaciones en niños y adultos<br>
+                                                ✅Prótesis en rodilla y cadera<br>
+                                                ✅Artroscopia de rodilla<br>
+                                                ✅Infiltración de hombro, codo, rodilla, cadera y tobillo<br>
+                                                ✅Manejo de pie plano, juanetes y deformidades congénitas<br>
+
+                                                ✔️Atención de Lunes a Sábado de 8 am a 8pm y domingos de: 8:00 am a 1:00 pm
+                                                📍Jr Hugo Pesce 350 - A
+                                                Se hace visitas domiciliarias
+                                                Teléfonos: 997952888 - 083 203052</br></br></p>
+                                                    <p class="text-end">Andahuaylas, junio de 2021 </br></br></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" style="margin-top: -20px" >
+                                                                    Ver mas especialidades
+                                                 </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--FIN PLANTILLA-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-30 p-2">
+                <div class="card" style="width: 23.1rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><u>Neumología</u></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Dr. Adler David </h6>
+                      <p class="text-justify fst-italic">Enfermedades de las vías respiratorias: Infecciones respiratorias (Virales, Bacterianas, Micóticas), Tos crónica</p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                        Leer más
+                      </button>
+                      <!-- Modal -->
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Clinica del valle</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!--Plantilla comunicado-->
+                                        <table style='max-width: 600px;padding: 10px;margin:0 auto; background:#F1F3F4'>
+                                            <div style='width:100%; margin: 0 auto; margin-bottom: 5px; height:5px; background:#1B386E;'></div>
+                                            <tr>
+                                                <td style='text-align: center; padding: 0; display: flex; justify-content: space-between'>
+                                                    <img width='90%' style='margin: 1.5% auto; text-align: left' src='images/neu.jpg'>
+                                                </td>
+                                            </tr>
+                                  
+                                            <tr>
+                                                <td style='font-family: Times, serif;'>
+                                                    <h2 style='text-align: center;font-size: 25px; font-family:Cardana; '><u>Neumología</u></h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style=' text-align: justify;'>
+                                                        <p style='margin: 2px; font-size: 14px;'>‼️CLINICA DONDE TE VAS A ATENDER SOLO CON PROFESIONALES ‼️<br>
+                                                        Dr. Adler David médico Especialista en Neumologia:<br>
+                                                        ✔️Enfermedades de las vías respiratorias:<br>
+                                                            ✅Infecciones respiratorias (Virales, Bacterianas, Micóticas), Tos crónica, Asma Bronquial.<br>
+                                                        ✅Enfermedad Pulmonar Obstructiva Crónica (Bronquitis crónica y Enfisema pulmonar),<br> ✅Enfermedad Pulmonar Intersticial Difusa (Fibrosis Pulmonar), cáncer de pulmón.<br> ✅Enfermedades de la Pleura (Derrame pleural, Neumotórax)<br>
+                                                        ✅Tuberculosis pulmonar y Extrapulmonar, ✅Pulmón secuelar por tuberculosis, <br>✅Bronquiectasias, Control y tratamiento del Tabaquismo.<br>
+
+                                                        ✔️PROCEDIMIENTOS:<br>
+                                                        ✅Espirometrías, Biopsia Pleural, Toracocentesis diagnóstica y evacuatoria.
+                                                        ✔️UBÍCANOS EN:<br>
+
+                                                        Jr Hugo Pesce N° 350 - A Cel 997952888
+                                                        Atención de 8:00 am a 8:00 pm de lunes a sábado y domingos de 8:00 a 12:0</br></br></p>
+                                                        <p class="text-end">Andahuaylas, junio de 2021 </br></br></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>
+                                                   <button type="button" class="btn btn-primary" style="margin-top: -20px" >
+                                                                    Ver mas especialidades
+                                                 </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--FIN PLANTILLA-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+        
+        <section class="about-services" id="equipo">
+            <div class="contenedor">
+                <h2 class="titulo">Cuerpo medico</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="images/med1.jpg" alt="">
+                        <h3>Dra. Lily Zarzo</h3>
+                        <p>Especialista CIRUJANA GENERAL, es parte de nuestro exclusivo Staff de profesionales, 
+                            que están a tu disposición para ayudarte a solucionar cualquier problema de salud que presentes.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="images/med2.jpg" alt="">
+                        <h3>Dr. Enrrique David</h3>
+                        <p>Médico Especialista en Gastroenterología.
+                            ✅Enfermedades de la Vía Digestiva:Disfagia Orofaríngea, Esofagitis, Enfermedad por Reflujo Gastroesofágico, Dispepsia Funcional, 
+                            Gastritis Aguda y crónica.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="images/med3.jpg" alt="">
+                        <h3>Dr. José Ángel Davalos Salas</h3>
+                        <p>Especialista en medicina interna esta a tu servicio en nuestra clínica👌
+                            1.- Diabetes mellitus con complicaciones agudas y crónicas
+                            2-. Dislipidemias.
+                            3. Hipertiriodismo e hipotiroidismo</p>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3"
+            style="margin-left: 42%;">
+                Ver mas medicos
+              </button>
+            </div>
+        </section>
+
+
+ <!--CONTACT-->
+ <section class="container mt-5 p-3" id="contact">
+    <div class="row">
+        <div class="col-7 mystaff">
+            <h3>Ubicación</h3>
+            <div class="mt-4 d-flex flex-row bd-highlight mb-3 justify-content-center stitle">
+                <div class="bd-highlight flex-fill "><i class="fas fa-map-marker-alt"></i> Andahuaylas, Apurímac, Perú</div>
+                <div class="bd-highlight flex-fill "><i class="far fa-phone-alt"></i> (+51) 952 662 437</div>
+                <div class="bd-highlight flex-fill "><i class="far fa-envelope"></i> <a href="https://www.google.com/intl/es/gmail/about/" target="_blank">delvalle@gmail.com</a></div>
+            </div>
+            <div class="" style="margin-bottom: 20px;">
+                <iframe class="w-100" height="410px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1402.9789516936642!2d-73.38235240603188!3d-13.656346759707082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916d2b1edafc3a43%3A0x494760adce7c5003!2sCL%C3%8DNICA%20M%C3%89DICOS%20ESPECIALISTAS%20DEL%20VALLE%20S.R.L.!5e1!3m2!1ses!2spe!4v1623159924420!5m2!1ses!2spe" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col align-self-center">
+            <div class="mt-4">
+                <img class=" img-thumbnail rounded w-100 img-fluid" src="images/edif.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <footer>
+            <div class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Phone</h4>
+                    <p>(+51) 997 952 888</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Email</h4>
+                    <p>clinicadelvalle@gmail.com</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Location</h4>
+                    <p>Jr. Hugo Pecce Peceto - N° 350 Andahuaylas</p>
+                </div>
+            </div>
+            <h2 class="titulo-final">&copy;Clinica del Valle | UNAJMA</h2>
+            <div class="col-md-6 col-sm-4 agileinfo-icons float-end">
+                    <ul>
+                        <li><a class="icon fb" href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a class="icon tw" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    
+                    </ul>
+                </div>
+        </footer>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>

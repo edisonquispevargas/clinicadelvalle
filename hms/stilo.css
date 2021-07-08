@@ -1,0 +1,23 @@
+/* buscador */
+
+.formulariob{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    float: right;
+    background: initial;
+    padding: 10px;
+    border-radius: 10px;
+}
+.formulariob .btn_buscar{
+    background: #2dc3cc;
+    color: #FFFFFF;
+    padding: 0 20px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 10px;
+
+}
