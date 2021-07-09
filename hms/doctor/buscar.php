@@ -53,7 +53,7 @@ check_login();
 						</div>
 					</section>
 					<div class="container-fluid container-fullw bg-white">
-                        <form role="form" method="post" name="search" action="manage-patient.php" class="formulariob">
+                        <form role="form" method="post" name="search" action="gestionar-paciente.php" class="formulariob">
 
 
                             <input type="submit" name="search" id="submit" class="btn btn-success" value="Regresar">

@@ -7,7 +7,7 @@
 			</div>
 			<ul class="main-navigation-menu">
 				<li>
-					<a href="dashboard.php">
+					<a href="inicio.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-home"></i>
@@ -21,7 +21,7 @@
 
 
 				<li>
-					<a href="appointment-history.php">
+					<a href="historial-de-citas.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-list"></i>
@@ -46,12 +46,12 @@
 					<ul class="sub-menu">
 
 						<li>
-							<a href="add-patient.php">
+							<a href="agregar-paciente.php">
 								<span class="title"> Agregar Paciente</span>
 							</a>
 						</li>
 						<li>
-							<a href="manage-patient.php">
+							<a href="Gestionar-paciente.php">
 								<span class="title"> Gestionar Paciente </span>
 							</a>
 						</li>

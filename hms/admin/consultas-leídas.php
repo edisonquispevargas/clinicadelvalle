@@ -95,7 +95,7 @@ if (isset($_GET['del'])) {
 
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="query-details.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-lg" title="View Details"><i class="fa fa-file"></i></a>
+														<a href="Detalles-consulta.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-lg" title="View Details"><i class="fa fa-file"></i></a>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">
 														<div class="btn-group" dropdown is-open="status.isopen">

@@ -68,7 +68,7 @@ check_login();
 										<tr>
 											<th class="center">#</th>
 											<th class="hidden-xs">Nombre Doctor</th>
-											<th>Nombre Cita</th>
+											<th>Nombre Paciente</th>
 											<th>Especialidad</th>
 											<th>Cuota Consultoria</th>
 											<th>Fecha/Hora de Cita </th>

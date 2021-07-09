@@ -8,7 +8,7 @@ $ret=mysqli_query($con,"SELECT * FROM doctors WHERE docEmail='".$_POST['username
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
-$extra="dashboard.php";
+$extra="inicio.php";
 $_SESSION['dlogin']=$_POST['username'];
 $_SESSION['id']=$num['id'];
 $uip=$_SERVER['REMOTE_ADDR'];

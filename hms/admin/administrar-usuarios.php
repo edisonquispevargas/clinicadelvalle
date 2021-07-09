@@ -7,7 +7,7 @@ check_login();
 
 if (isset($_GET['del'])) {
 	mysqli_query($con, "delete from users where id = '" . $_GET['id'] . "'");
-	$_SESSION['msg'] = "datos eliminados !!";
+	$_SESSION['msg'] = "datos eliminados correctamente !!";
 }
 ?>
 <!DOCTYPE html>
@@ -106,7 +106,7 @@ if (isset($_GET['del'])) {
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<a href="edit-users.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 
-														<a href="manage-users.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														<a href="administrar-usuarios.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('¿Estás seguro de que quieres eliminar?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">
 														<div class="btn-group" dropdown is-open="status.isopen">

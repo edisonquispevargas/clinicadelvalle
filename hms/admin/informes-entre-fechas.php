@@ -70,7 +70,7 @@ check_login();
 											</div>
 											<div class="panel-body">
 
-												<form role="form" method="post" action="betweendates-detailsreports.php">
+												<form role="form" method="post" action="detalles-enforme.php">
 													<div class="form-group">
 														<label for="exampleInputPassword1">
 															Apartir Fecha:

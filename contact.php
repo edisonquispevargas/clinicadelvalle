@@ -7,7 +7,7 @@ $email=$_POST['emailid'];
 $mobileno=$_POST['mobileno'];
 $dscrption=$_POST['description'];
 $query=mysqli_query($con,"insert into tblcontactus(fullname,email,contactno,message) value('$name','$email','$mobileno','$dscrption')");
-echo "<script>alert('Your information succesfully submitted');</script>";
+echo "<script>alert('Su información ha sido enviada con éxito, el administrador se contactara contigo');</script>";
 echo "<script>window.location.href ='contact.php'</script>";
 
 }
@@ -18,6 +18,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 <html>
 	<head>
 		<title>Clinica del Valle | 2021</title>
+		<link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
 		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 	</head>
@@ -68,7 +69,8 @@ echo "<script>window.location.href ='contact.php'</script>";
 					    <form name="contactus" method="post">
 					    	<div>
 						    	<span><label>NOMBRE</label></span>
-						    	<span><input type="text" name="fullname" required="true" value=""></span>
+						    	<span><input type="text" name="fullname" required="true" value=""
+								pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solamente letras de A Z"></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
@@ -76,7 +78,8 @@ echo "<script>window.location.href ='contact.php'</script>";
 						    </div>
 						    <div>
 						     	<span><label>TELEFONO</label></span>
-						    	<span><input type="text" name="mobileno" required="true" value=""></span>
+						    	<span><input type="text" name="mobileno" required="true" value=""
+								title="Solamente Números" pattern="[0123456789]+" maxlength="9"></span>
 						    </div>
 						    <div>
 						    	<span><label>DESCRIPCION - MENSAJE</label></span>

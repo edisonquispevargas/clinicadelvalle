@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 	$sql = mysqli_query($con, "update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis',dnipaciente='$patdni' where ID='$eid'");
 	if ($sql) {
 		echo "<script>alert('Datos del paciente actualizados correctamente');</script>";
-		header('location:manage-patient.php');
+		header('location:Gestionar-paciente.php');
 	}
 }
 ?>

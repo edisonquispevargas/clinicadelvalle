@@ -10,8 +10,8 @@ check_login();
 <html lang="en">
 
 <head>
-	<title>Admin | Ver Paciente</title>
-	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
+	<title>Doctor | Gestionar Paciente</title>
+    <link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -25,6 +25,7 @@ check_login();
 	<link href="vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="stilo.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 </head>
 
@@ -39,14 +40,14 @@ check_login();
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Admin | Ver Informe</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Doctor | Gestionar Paciente</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
-									<span>Admin</span>
+									<span>Doctor</span>
 								</li>
 								<li class="active">
-									<span>Ver Informe</span>
+									<span>Gestionar Paciente</span>
 								</li>
 							</ol>
 						</div>
@@ -54,31 +55,38 @@ check_login();
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-								<h4 class="tittle-w3-agileits mb-4" style="color: #2dc3cc;font-weight: 600">Informe por fechas</h4>
-								<?php
-								$fdate = $_POST['fromdate'];
-								$tdate = $_POST['todate'];
+								<h5 class="over-title margin-bottom-15"style="color: #0a6aa1; margin-left: 42%"> <span class="text-bold"> Gestionar Paciente</span></h5>
 
-								?>
-								<h5 align="center" style="color:#2dc3cc">Informe de: <?php echo $fdate ?> a <?php echo $tdate ?></h5>
+                                <form role="form" method="post" name="search" action="buscar.php" class="formulariob">
+
+                                        <input type="text" name="searchdata" id="searchdata" value="" required='true'placeholder="Buscar">
+                                        <input type="submit" name="search" id="submit" class="btn_buscar" value="Buscar">
+
+                                </form>
+								<form role="form" method="post" name="search" action="agregar-paciente.php" class="formulario">
+
+
+                            <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar nuevo Paciente">
+
+                        </form>
 
 								<table class="table table-hover" id="sample-table-1">
 									<thead>
 										<tr>
 											<th class="center">#</th>
-											<th>DNI Paciente</th>
+											<th>DNI</th>
 											<th>Nombre Paciente</th>
-											<th>Contacto Paciente</th>
+											<th>Telefono Paciente</th>
 											<th>Sexo Paciente </th>
 											<th>Fecha Creacion </th>
-											<!--<th>Fecha Modificacion </th>-->
+										<!--	<th>Fecha Modificacion</th>-->
 											<th>Accion</th>
 										</tr>
 									</thead>
 									<tbody>
 										<?php
-
-										$sql = mysqli_query($con, "select * from tblpatient where date(CreationDate) between '$fdate' and '$tdate'");
+										$docid = $_SESSION['id'];
+										$sql = mysqli_query($con, "select * from tblpatient where Docid='$docid' ");
 										$cnt = 1;
 										while ($row = mysqli_fetch_array($sql)) {
 										?>
@@ -93,7 +101,7 @@ check_login();
 												</td>
 												<td>
 
-													<a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
+													<a href="editar-paciente.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> || <a href="vista-paciente.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a> || <a href="?editid=<?php echo $row['ID']; ?>"><i class="fa fa-trash"></i></a> 
 
 												</td>
 											</tr>

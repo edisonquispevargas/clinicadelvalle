@@ -10,7 +10,7 @@ check_login();
 <html lang="en">
 
 <head>
-	<title>Doctor | Clinica del valle</title>
+	<title>Admin | Ver Paciente</title>
 	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -26,82 +26,97 @@ check_login();
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/plugins.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
-
-
 </head>
 
-<body style="background: #97e0e5;">
+<body>
 	<div id="app">
 		<?php include('include/sidebar.php'); ?>
 		<div class="app-content">
-
 			<?php include('include/header.php'); ?>
-
-			<!-- end: TOP NAVBAR -->
 			<div class="main-content">
 				<div class="wrap-content container" id="container">
 					<!-- start: PAGE TITLE -->
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Doctor | CLINICA DEL VALLE</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Admin | Ver Informe</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
-									<span>Usuaio</span>
+									<span>Admin</span>
 								</li>
 								<li class="active">
-									<span>Inicio</span>
+									<span>Ver Informe</span>
 								</li>
 							</ol>
 						</div>
 					</section>
-					<!-- end: PAGE TITLE -->
-					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
-							<div class="col-sm-4">
-								<div class="panel panel-white no-radius text-center">
-									<div class="panel-body">
-										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle" style="font-weight: 600;color: #2dc3cc;">Mi Perfil</h2>
+							<div class="col-md-12">
+								<h4 class="tittle-w3-agileits mb-4" style="color: #2dc3cc;font-weight: 600">Informe por fechas</h4>
+								<?php
+								$fdate = $_POST['fromdate'];
+								$tdate = $_POST['todate'];
 
-										<p class="links cl-effect-1">
-											<a href="edit-profile.php">
-												Modificar Perfil
-											</a>
-										</p>
-									</div>
-								</div>
+								?>
+								<h5 align="center" style="color:#2dc3cc">Informe de: <?php echo $fdate ?> a <?php echo $tdate ?></h5>
+
+								<table class="table table-hover" id="sample-table-1">
+									<thead>
+										<tr>
+											<th class="center">#</th>
+											<th>DNI Paciente</th>
+											<th>Nombre Paciente</th>
+											<th>Contacto Paciente</th>
+											<th>Sexo Paciente </th>
+											<th>Fecha Creacion </th>
+											<!--<th>Fecha Modificacion </th>-->
+											<th>Accion</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+
+										$sql = mysqli_query($con, "select * from tblpatient where date(CreationDate) between '$fdate' and '$tdate'");
+										$cnt = 1;
+										while ($row = mysqli_fetch_array($sql)) {
+										?>
+											<tr>
+												<td class="center"><?php echo $cnt; ?>.</td>
+												<td class="hidden-xs"><?php echo $row['dnipaciente']; ?></td>
+												<td><?php echo $row['PatientName']; ?></td>
+												<td><?php echo $row['PatientContno']; ?></td>
+												<td><?php echo $row['PatientGender']; ?></td>
+												<td><?php echo $row['CreationDate']; ?></td>
+												
+												</td>
+												<td>
+
+													<a href="vista-paciente.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
+
+												</td>
+											</tr>
+										<?php
+											$cnt = $cnt + 1;
+										} ?></tbody>
+								</table>
 							</div>
-							<div class="col-sm-4">
-								<div class="panel panel-white no-radius text-center">
-									<div class="panel-body">
-										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle" style="font-weight: 600;color: #2dc3cc;">Mis Citas</h2>
-
-										<p class="cl-effect-1">
-											<a href="appointment-history.php">
-												Ver Historial de Citas
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- start: FOOTER -->
-		<?php include('include/footer.php'); ?>
-		<!-- end: FOOTER -->
+	</div>
+	<div>
+	<!-- start: FOOTER -->
+	<?php include('include/footer.php'); ?>
+	<!-- end: FOOTER -->
 
-		<!-- start: SETTINGS -->
-		<?php include('include/setting.php'); ?>
+	<!-- start: SETTINGS -->
+	<?php include('include/setting.php'); ?>
 
-		<!-- end: SETTINGS -->
+	<!-- end: SETTINGS -->
 	</div>
 	<!-- start: MAIN JAVASCRIPTS -->
 	<script src="vendor/jquery/jquery.min.js"></script>

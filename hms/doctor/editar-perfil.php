@@ -12,7 +12,8 @@ if (isset($_POST['submit'])) {
 	$docemail = $_POST['docemail'];
 	$sql = mysqli_query($con, "Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='" . $_SESSION['id'] . "'");
 	if ($sql) {
-		echo "<script>alert('Doctor Details updated Successfully');</script>";
+		echo "<script>alert('Detalles del doctor actualizados con éxito');</script>";
+		header('location:inicio.php');
 	}
 }
 ?>

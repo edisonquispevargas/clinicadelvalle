@@ -5,13 +5,24 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 
+//updating Admin Remark
+if (isset($_POST['update'])) {
+	$qid = intval($_GET['id']);
+	$adminremark = $_POST['adminremark'];
+	$isread = 1;
+	$query = mysqli_query($con, "update tblcontactus set  AdminRemark='$adminremark',IsRead='$isread' where id='$qid'");
+	if ($query) {
+		echo "<script>alert('Comentario de administrador actualizado correctamente.');</script>";
+		echo "<script>window.location.href ='consultas-leídas.php'</script>";
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Doctor | Gestionar Paciente</title>
-    <link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
+	<title>Admin | Detalle Consulta</title>
+	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -25,7 +36,6 @@ check_login();
 	<link href="vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/plugins.css">
-    <link rel="stylesheet" href="stilo.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 </head>
 
@@ -33,98 +43,115 @@ check_login();
 	<div id="app">
 		<?php include('include/sidebar.php'); ?>
 		<div class="app-content">
+
 			<?php include('include/header.php'); ?>
+
+			<!-- end: TOP NAVBAR -->
 			<div class="main-content">
 				<div class="wrap-content container" id="container">
 					<!-- start: PAGE TITLE -->
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Doctor | Gestionar Paciente</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Admin | Detalle Consulta</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
-									<span>Doctor</span>
+									<span>Admin</span>
 								</li>
 								<li class="active">
-									<span>Gestionar Paciente</span>
+									<span>Detalle Consulta</span>
 								</li>
 							</ol>
 						</div>
 					</section>
+					<!-- end: PAGE TITLE -->
+					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
+
+
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15"style="color: #0a6aa1; margin-left: 42%"> <span class="text-bold"> Gestionar Paciente</span></h5>
-
-                                <form role="form" method="post" name="search" action="search.php" class="formulariob">
-
-                                        <input type="text" name="searchdata" id="searchdata" value="" required='true'placeholder="Buscar">
-                                        <input type="submit" name="search" id="submit" class="btn_buscar" value="Buscar">
-
-                                </form>
-								<form role="form" method="post" name="search" action="add-patient.php" class="formulario">
-
-
-                            <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar nuevo Paciente">
-
-                        </form>
-
+								<h5 class="over-title margin-bottom-15">Gestionar <span class="text-bold">Detalle Consulta</span></h5>
 								<table class="table table-hover" id="sample-table-1">
-									<thead>
-										<tr>
-											<th class="center">#</th>
-											<th>DNI</th>
-											<th>Nombre Paciente</th>
-											<th>Telefono Paciente</th>
-											<th>Sexo Paciente </th>
-											<th>Fecha Creacion </th>
-										<!--	<th>Fecha Modificacion</th>-->
-											<th>Accion</th>
-										</tr>
-									</thead>
+
 									<tbody>
 										<?php
-										$docid = $_SESSION['id'];
-										$sql = mysqli_query($con, "select * from tblpatient where Docid='$docid' ");
+										$qid = intval($_GET['id']);
+										$sql = mysqli_query($con, "select * from tblcontactus where id='$qid'");
 										$cnt = 1;
 										while ($row = mysqli_fetch_array($sql)) {
 										?>
+
 											<tr>
-												<td class="center"><?php echo $cnt; ?>.</td>
-												<td class="hidden-xs"><?php echo $row['dnipaciente']; ?></td>
-												<td><?php echo $row['PatientName']; ?></td>
-												<td><?php echo $row['PatientContno']; ?></td>
-												<td><?php echo $row['PatientGender']; ?></td>
-												<td><?php echo $row['CreationDate']; ?></td>
-												
-												</td>
-												<td>
-
-													<a href="edit-patient.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> || <a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a> || <a href="?editid=<?php echo $row['ID']; ?>"><i class="fa fa-trash"></i></a> 
-
-												</td>
+												<th>Nombres y Apellidos</th>
+												<td><?php echo $row['fullname']; ?></td>
 											</tr>
+
+											<tr>
+												<th>Email</th>
+												<td><?php echo $row['email']; ?></td>
+											</tr>
+											<tr>
+												<th>Numero de Contacto</th>
+												<td><?php echo $row['contactno']; ?></td>
+											</tr>
+											<tr>
+												<th>Mensaje o consulta</th>
+												<td><?php echo $row['message']; ?></td>
+											</tr>
+
+											<?php if ($row['AdminRemark'] == "") { ?>
+												<form name="query" method="post">
+													<tr>
+														<th>Comentario Administrador</th>
+														<td><textarea name="adminremark" class="form-control" required="true"></textarea></td>
+													</tr>
+													<tr>
+														<td>&nbsp;</td>
+														<td>
+															<button type="submit" class="btn btn-primary pull-left" name="update">
+																Modificar <i class="fa fa-arrow-circle-right"></i>
+															</button>
+
+														</td>
+													</tr>
+
+												</form>
+											<?php } else { ?>
+
+												<tr>
+													<th>Comentario Administrador</th>
+													<td><?php echo $row['AdminRemark']; ?></td>
+												</tr>
+
+												<tr>
+													<th>Fecha Ultima Actualizacion</th>
+													<td><?php echo $row['LastupdationDate']; ?></td>
+												</tr>
+
 										<?php
-											$cnt = $cnt + 1;
-										} ?></tbody>
+											}
+										} ?>
+									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- end: BASIC EXAMPLE -->
+			<!-- end: SELECT BOXES -->
+
 		</div>
-	</div>
-	<div>
-	<!-- start: FOOTER -->
-	<?php include('include/footer.php'); ?>
-	<!-- end: FOOTER -->
+		<!-- start: FOOTER -->
+		<?php include('include/footer.php'); ?>
+		<!-- end: FOOTER -->
 
-	<!-- start: SETTINGS -->
-	<?php include('include/setting.php'); ?>
+		<!-- start: SETTINGS -->
+		<?php include('include/setting.php'); ?>
 
-	<!-- end: SETTINGS -->
+		<!-- end: SETTINGS -->
 	</div>
 	<!-- start: MAIN JAVASCRIPTS -->
 	<script src="vendor/jquery/jquery.min.js"></script>

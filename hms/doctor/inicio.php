@@ -5,23 +5,12 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 
-//updating Admin Remark
-if (isset($_POST['update'])) {
-	$qid = intval($_GET['id']);
-	$adminremark = $_POST['adminremark'];
-	$isread = 1;
-	$query = mysqli_query($con, "update tblcontactus set  AdminRemark='$adminremark',IsRead='$isread' where id='$qid'");
-	if ($query) {
-		echo "<script>alert('Comentario de administrador actualizado correctamente.');</script>";
-		echo "<script>window.location.href ='read-query.php'</script>";
-	}
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Admin | Detalle Consulta</title>
+	<title>Doctor | Clinica del valle</title>
 	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -37,9 +26,11 @@ if (isset($_POST['update'])) {
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/plugins.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+
+
 </head>
 
-<body>
+<body style="background: #97e0e5;">
 	<div id="app">
 		<?php include('include/sidebar.php'); ?>
 		<div class="app-content">
@@ -53,14 +44,14 @@ if (isset($_POST['update'])) {
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Admin | Detalle Consulta</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Doctor | CLINICA DEL VALLE</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
-									<span>Admin</span>
+									<span>Usuaio</span>
 								</li>
 								<li class="active">
-									<span>Detalle Consulta</span>
+									<span>Inicio</span>
 								</li>
 							</ol>
 						</div>
@@ -68,81 +59,40 @@ if (isset($_POST['update'])) {
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
-
-
 						<div class="row">
-							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15">Gestionar <span class="text-bold">Detalle Consulta</span></h5>
-								<table class="table table-hover" id="sample-table-1">
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle" style="font-weight: 600;color: #2dc3cc;">Mi Perfil</h2>
 
-									<tbody>
-										<?php
-										$qid = intval($_GET['id']);
-										$sql = mysqli_query($con, "select * from tblcontactus where id='$qid'");
-										$cnt = 1;
-										while ($row = mysqli_fetch_array($sql)) {
-										?>
-
-											<tr>
-												<th>Nombres y Apellidos</th>
-												<td><?php echo $row['fullname']; ?></td>
-											</tr>
-
-											<tr>
-												<th>Email</th>
-												<td><?php echo $row['email']; ?></td>
-											</tr>
-											<tr>
-												<th>Numero de Contacto</th>
-												<td><?php echo $row['contactno']; ?></td>
-											</tr>
-											<tr>
-												<th>Mensaje o consulta</th>
-												<td><?php echo $row['message']; ?></td>
-											</tr>
-
-											<?php if ($row['AdminRemark'] == "") { ?>
-												<form name="query" method="post">
-													<tr>
-														<th>Comentario Administrador</th>
-														<td><textarea name="adminremark" class="form-control" required="true"></textarea></td>
-													</tr>
-													<tr>
-														<td>&nbsp;</td>
-														<td>
-															<button type="submit" class="btn btn-primary pull-left" name="update">
-																Modificar <i class="fa fa-arrow-circle-right"></i>
-															</button>
-
-														</td>
-													</tr>
-
-												</form>
-											<?php } else { ?>
-
-												<tr>
-													<th>Comentario Administrador</th>
-													<td><?php echo $row['AdminRemark']; ?></td>
-												</tr>
-
-												<tr>
-													<th>Fecha Ultima Actualizacion</th>
-													<td><?php echo $row['LastupdationDate']; ?></td>
-												</tr>
-
-										<?php
-											}
-										} ?>
-									</tbody>
-								</table>
+										<p class="links cl-effect-1">
+											<a href="editar-perfil.php">
+												Modificar Perfil
+											</a>
+										</p>
+									</div>
+								</div>
 							</div>
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle" style="font-weight: 600;color: #2dc3cc;">Mis Citas</h2>
+
+										<p class="cl-effect-1">
+											<a href="historial-de-citas.php">
+												Ver Historial de Citas
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- end: BASIC EXAMPLE -->
-			<!-- end: SELECT BOXES -->
-
 		</div>
 		<!-- start: FOOTER -->
 		<?php include('include/footer.php'); ?>

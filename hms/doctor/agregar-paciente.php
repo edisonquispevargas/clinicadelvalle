@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 	values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis','$patdni')");
 	if ($sql) {
 		echo "<script>alert('Paciente agregado exitosamente');</script>";
-		header('location:add-patient.php');
+		header('location:Gestionar-paciente.php');
 	}
 }
 ?>
