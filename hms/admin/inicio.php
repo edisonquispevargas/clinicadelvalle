@@ -66,7 +66,7 @@ check_login();
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
 										<h2 style="color: #2dc3cc;font-weight: 600;font-size: 25px">Administrar Usuario</h2>
 										<p class="links cl-effect-1">
-											<a href="manage-users.php" style="font-weight: 600;color: blue;font-size: 15px;">
+											<a href="administrar-usuarios.php" style="font-weight: 600;color: blue;font-size: 15px;">
 												<?php $result = mysqli_query($con, "SELECT * FROM users ");
 												$num_rows = mysqli_num_rows($result); {
 												?>
@@ -84,7 +84,7 @@ check_login();
 										<h2 style="color: #2dc3cc;font-weight: 600;font-size: 25px">Administrar Medicos</h2>
 
 										<p class="cl-effect-1">
-											<a href="manage-doctors.php" style="font-weight: 600;color: blue;font-size: 15px;">
+											<a href="Administrar-doctores.php" style="font-weight: 600;color: blue;font-size: 15px;">
 												<?php $result1 = mysqli_query($con, "SELECT * FROM doctors ");
 												$num_rows1 = mysqli_num_rows($result1); {
 												?>
@@ -103,7 +103,7 @@ check_login();
 
 										<p class="links cl-effect-1">
 											<a href="book-appointment.php">
-												<a href="appointment-history.php" style="font-weight: 600;color: blue;font-size: 15px;">
+												<a href="historial-de-citas.php" style="font-weight: 600;color: blue;font-size: 15px;">
 													<?php $sql = mysqli_query($con, "SELECT * FROM appointment");
 													$num_rows2 = mysqli_num_rows($sql); {
 													?>
@@ -123,7 +123,7 @@ check_login();
 										<h2 style="color: #2dc3cc;font-weight: 600;font-size: 25px">Gestionar Pacientes</h2>
 
 										<p class="links cl-effect-1">
-											<a href="manage-patient.php" style="font-weight: 600;color: blue;font-size: 15px;">
+											<a href="administrar-paciente.php" style="font-weight: 600;color: blue;font-size: 15px;">
 												<?php $result = mysqli_query($con, "SELECT * FROM tblpatient ");
 												$num_rows = mysqli_num_rows($result); {
 												?>
@@ -142,7 +142,7 @@ check_login();
 
 										<p class="links cl-effect-1">
 											<a href="book-appointment.php">
-												<a href="unread-queries.php" style="font-weight: 600;color: blue;font-size: 15px;">
+												<a href="consultas-no-leídas.php" style="font-weight: 600;color: blue;font-size: 15px;">
 													<?php
 													$sql = mysqli_query($con, "SELECT * FROM tblcontactus where  IsRead is null");
 													$num_rows22 = mysqli_num_rows($sql);

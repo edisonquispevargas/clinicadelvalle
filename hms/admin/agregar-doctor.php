@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 	values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password','$docdni','$docapellido')");
 	if ($sql) {
 		echo "<script>alert('Doctor agregado correctamente');</script>";
-		echo "<script>window.location.href ='manage-doctors.php'</script>";
+		echo "<script>window.location.href ='Administrar-doctores.php'</script>";
 	}
 }
 ?>

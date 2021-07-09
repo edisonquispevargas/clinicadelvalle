@@ -7,7 +7,7 @@
 			</div>
 			<ul class="main-navigation-menu" >
 				<li>
-					<a href="dashboard.php">
+					<a href="inicio.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-home"></i>
@@ -31,17 +31,17 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="doctor-specilization.php">
+							<a href="especialidad-medica.php">
 								<span> Especialidades </span>
 							</a>
 						</li>
 						<li>
-							<a href="add-doctor.php">
+							<a href="agregar-doctor.php">
 								<span> Agregar Doctor</span>
 							</a>
 						</li>
 						<li>
-							<a href="Manage-doctors.php">
+							<a href="Administrar-doctores.php">
 								<span class="title"> Gestionar Doctor </span>
 							</a>
 						</li>
@@ -63,7 +63,7 @@
 					<ul class="sub-menu">
 
 						<li>
-							<a href="manage-users.php">
+							<a href="administrar-usuarios.php">
 								<span class="title"> Gestionar Usuarios </span>
 							</a>
 						</li>
@@ -84,7 +84,7 @@
 					<ul class="sub-menu">
 
 						<li>
-							<a href="manage-patient.php">
+							<a href="administrar-paciente.php">
 								<span class="title"> Gestionar Pacientes </span>
 							</a>
 						</li>
@@ -93,7 +93,7 @@
 				</li>
 
 				<li>
-					<a href="appointment-history.php">
+					<a href="historial-de-citas.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-file"></i>
@@ -120,12 +120,12 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="unread-queries.php">
+							<a href="consultas-no-leídas.php">
 								<span class="title"> Consulta no Leida </span>
 							</a>
 						</li>
 						<li>
-							<a href="read-query.php">
+							<a href="consultas-leídas.php">
 								<span class="title"> Consulta Leida </span>
 							</a>
 						</li>
@@ -169,7 +169,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="between-dates-reports.php">
+							<a href="informes-entre-fechas.php">
 								<span class="title">Infrome de Fecha en B/N </span>
 							</a>
 						</li>

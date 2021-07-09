@@ -4,21 +4,18 @@ error_reporting(0);
 include('include/config.php');
 include('include/checklogin.php');
 check_login();
-if (isset($_POST['submit'])) {
-	$sql = mysqli_query($con, "insert into doctorSpecilization(specilization) values('" . $_POST['doctorspecilization'] . "')");
-	$_SESSION['msg'] = "Especialidad Médica Agregada con Éxito!!";
-}
+
 
 if (isset($_GET['del'])) {
-	mysqli_query($con, "delete from doctorSpecilization where id = '" . $_GET['id'] . "'");
-	$_SESSION['msg'] = "Especialidad eliminada Correctamente!!";
+	mysqli_query($con, "delete from doctors where id = '" . $_GET['id'] . "'");
+	$_SESSION['msg'] = " doctor eleminado correctamente !!";
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Admin | Especialidad Doctor</title>
+	<title>Admin | Gestionar Doctor</title>
 	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
@@ -51,14 +48,14 @@ if (isset($_GET['del'])) {
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Agregar Especialidad Doctor</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600">Administrar Medicos</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
 									<span>Admin</span>
 								</li>
 								<li class="active">
-									<span>Agregar Especialidad Doctor</span>
+									<span>Administrar Medicos</span>
 								</li>
 							</ol>
 						</div>
@@ -66,76 +63,50 @@ if (isset($_GET['del'])) {
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
+					<form role="form" method="post" name="search" action="agregar-doctor.php" class="formulariob">
+
+
+                            <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar Doctor">
+
+                        </form>
 						<div class="row">
 							<div class="col-md-12">
-
-								<div class="row margin-top-30">
-									<div class="col-lg-6 col-md-12">
-										<div class="panel panel-white">
-											<div class="panel-heading">
-												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center;">Especialidad Doctor</h5>
-											</div>
-											<div class="panel-body">
-												
-												<form role="form" name="dcotorspcl" method="post">
-													<div class="form-group">
-														<label for="exampleInputEmail1" style="color: black">
-															Especialidad Doctor
-														</label>
-														<input type="text" name="doctorspecilization" required class="form-control" placeholder="Ingrese una especialidad">
-																	
-													</div>
-													<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
-														Aceptar
-													</button>
-													<p style="color:green;font-size: 15px;font-weight: 600; text-emphasis: center;"><?php echo htmlentities($_SESSION['msg']); ?>
-													<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
-												</form>
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-							<div class="col-lg-12 col-md-12">
-								<div class="panel panel-white">
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15"> <span class="text-bold" style="color: #0a6aa1; margin-left: 37%">
-                                        Gestionar Especialidad Doctor</span></h5>
-
-								<table class="table table-hover" id="sample-table-1">
+								<h5 class="over-title margin-bottom-15">
+                                    <span class="text-bold" style="color: #0a6aa1; margin-left: 42%">Gestionar Doctores</span></h5>
+								<p style="color:green;font-size: 20px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
+									<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
+								<table class="table">
 									<thead>
-										<tr>
+										<tr >
 											<th class="center">#</th>
-											<th> Nombre Especialidad</th>
-											<th class="hidden-xs">Fecha Creacion</th>
-											<th>Fecha Modificacion</th>
-											<th>Accion</th>
+											<th>Especializacion</th>
+                                            <th>DNI</th>
+											<th class="hidden-xs">Nombre Doctor</th>
+                                            <th>Apellidos </th>
+											<th>Fecha Creacion </th>
+											<th style="color: white;">Accion</th>
 										</tr>
 									</thead>
 									<tbody>
 										<?php
-										$sql = mysqli_query($con, "select * from doctorSpecilization");
+										$sql = mysqli_query($con, "select * from doctors");
 										$cnt = 1;
 										while ($row = mysqli_fetch_array($sql)) {
 										?>
 											<tr>
 												<td class="center"><?php echo $cnt; ?>.</td>
 												<td class="hidden-xs"><?php echo $row['specilization']; ?></td>
-												<td><?php echo $row['creationDate']; ?></td>
-												<td><?php echo $row['updationDate']; ?>
+                                                <td><?php echo $row['dni']; ?></td>
+												<td><?php echo $row['doctorName']; ?></td>
+                                                <td><?php echo $row['apellidos']; ?></td>
+												<td><?php echo $row['creationDate']; ?>
 												</td>
 
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="edit-doctor-specialization.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+														<a href="edit-doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 
-														<a href="doctor-specilization.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('¿Estás segura de que quieres Eliminar?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>
+														<a href="Administrar-doctores.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Está seguro de que desea eliminar?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">
 														<div class="btn-group" dropdown is-open="status.isopen">
@@ -145,7 +116,7 @@ if (isset($_GET['del'])) {
 															<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 																<li>
 																	<a href="#">
-																		Modificar
+																		Editar
 																	</a>
 																</li>
 																<li>
@@ -163,7 +134,6 @@ if (isset($_GET['del'])) {
 													</div>
 												</td>
 											</tr>
-
 										<?php
 											$cnt = $cnt + 1;
 										} ?>
@@ -178,15 +148,16 @@ if (isset($_GET['del'])) {
 			<!-- end: SELECT BOXES -->
 
 		</div>
+	</div>
+	<div>
+	<!-- start: FOOTER -->
+	<?php include('include/footer.php'); ?>
+	<!-- end: FOOTER -->
 
-		<!-- start: FOOTER -->
-		<?php include('include/footer.php'); ?>
-		<!-- end: FOOTER -->
+	<!-- start: SETTINGS -->
+	<?php include('include/setting.php'); ?>
 
-		<!-- start: SETTINGS -->
-		<?php include('include/setting.php'); ?>
-
-		<!-- end: SETTINGS -->
+	<!-- end: SETTINGS -->
 	</div>
 	<!-- start: MAIN JAVASCRIPTS -->
 	<script src="vendor/jquery/jquery.min.js"></script>
