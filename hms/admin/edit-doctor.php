@@ -144,7 +144,7 @@ if (isset($_POST['submit'])) {
 														</div>
 														<div class="form-group">
 															<label for="fess">
-																Horario de Consulta Medica
+																Precio de Consulta Medica
 															</label>
 															<input type="text" name="docfees" class="form-control" required="required" value="<?php echo htmlentities($data['docFees']); ?>">
 														</div>
