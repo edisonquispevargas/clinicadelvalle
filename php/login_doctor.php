@@ -5,7 +5,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Login Doctor</title>
+        <title>Loginnn Doctor</title>
         <link rel="shortcut icon" href="../img/logo.jpg" type="image/x-icon">
     
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
