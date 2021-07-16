@@ -60,15 +60,6 @@
                     <input type="text" placeholder="Telefono" name="telefono">
                     <input type="text" placeholder="Dirección" name="direccion">
                 
-
-                                    <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">2</label>
-                </div>
        
 
                     <p style="font-size: 12px; margin-top: 15px; text-align: center; color: #2dc3cc;">
