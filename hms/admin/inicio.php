@@ -127,7 +127,7 @@ check_login();
 												<?php $result = mysqli_query($con, "SELECT * FROM tblpatient ");
 												$num_rows = mysqli_num_rows($result); {
 												?>
-													Total Patients :<?php echo htmlentities($num_rows);
+													Total Pacientes :<?php echo htmlentities($num_rows);
 																} ?>
 											</a>
 										</p>

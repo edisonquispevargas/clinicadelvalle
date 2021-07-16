@@ -99,7 +99,7 @@
 								<i class="ti-file"></i>
 							</div>
 							<div class="item-inner">
-								<span class="title" > Historial Pacientes </span>
+								<span class="title" > Historial Pacientes - Citas </span>
 							</div>
 						</div>
 					</a>
