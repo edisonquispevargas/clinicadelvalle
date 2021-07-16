@@ -127,15 +127,15 @@ if (isset($_POST['submit'])) {
 														<span id="user-availability-status1" style="font-size:12px;"></span>
 													</div>
 													<div class="form-group">
-														<label class="block">
+														<label class="block" style="color: black">
 															Sexo:
 														</label>
 														<div class="clip-radio radio-primary">
-															<input type="radio" id="rg-female" name="gender" value="Femenino">
+															<input type="radio" id="rg-female" name="gender" value="Femenino" style="border-color: #2dc3cc">
 															<label for="rg-female">
 																Femenino
 															</label>
-															<input type="radio" id="rg-male" name="gender" value="Masculino">
+															<input type="radio" id="rg-male" name="gender" value="Masculino" >
 															<label for="rg-male">
 																Masculino
 															</label>
@@ -145,7 +145,8 @@ if (isset($_POST['submit'])) {
 														<label for="address">
 															Dirección Paciente
 														</label>
-														<textarea name="pataddress" class="form-control" placeholder="Dirección actual del paciente" required="true"></textarea>
+														<textarea name="pataddress" class="form-control" style="border-color: #2dc3cc"
+														placeholder="Dirección actual del paciente" required="true"></textarea>
 													</div>
 													<div class="form-group">
 														<label for="fess">
@@ -157,7 +158,8 @@ if (isset($_POST['submit'])) {
 														<label for="fess">
 															Historial Medico
 														</label>
-														<textarea type="text" name="medhis" class="form-control" placeholder="Ingrese el historial médico del paciente (si corresponde)"></textarea>
+														<textarea type="text" name="medhis" class="form-control" style="border-color: #2dc3cc"
+														placeholder="Ingrese el historial médico del paciente (si corresponde)"></textarea>
 													</div>
 													
 													<button type="submit" name="submit" id="submit" class="btn btn-primary" style="margin-left: 40%">
@@ -169,9 +171,9 @@ if (isset($_POST['submit'])) {
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-12 col-md-12">
+							<!--<div class="col-lg-12 col-md-12">
 								<div class="panel panel-white">
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>

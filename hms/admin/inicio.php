@@ -107,7 +107,7 @@ check_login();
 													<?php $sql = mysqli_query($con, "SELECT * FROM appointment");
 													$num_rows2 = mysqli_num_rows($sql); {
 													?>
-														Total Pacientes :<?php echo htmlentities($num_rows2);
+														Total Pacientes :<?php echo htmlentities($num_rows);
 																		} ?>
 												</a>
 											</a>

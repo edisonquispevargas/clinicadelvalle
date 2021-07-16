@@ -160,13 +160,15 @@ if (isset($_POST['submit'])) {
 														<label for="address" style="color: black;">
 															Direccion Doctor
 														</label>
-														<textarea name="clinicaddress" class="form-control" placeholder="Ingrese la dirección de la clínica del médico" required="true"></textarea>
+														<textarea name="clinicaddress" class="form-control" style="border-color: #2dc3cc"
+														placeholder="Ingrese la dirección de la clínica del médico" required="true"></textarea>
 													</div>
 													<div class="form-group">
 														<label for="fess" style="color: black;">
 															Tarifas de Consultoria Doctor
 														</label>
-														<input type="number" name="docfees" class="form-control" placeholder="Ingrese las tarifas de consultoría médica" 
+														<input type="number" name="docfees" class="form-control"style="border-color: #2dc3cc"
+														 placeholder="Ingrese las tarifas de consultoría médica" 
 														required="true">
 													</div>
 
@@ -174,7 +176,8 @@ if (isset($_POST['submit'])) {
 														<label for="fess"style="color: black">
 															Contacto Doctor
 														</label>
-														<input type="" name="doccontact" class="form-control" placeholder="Ingrese el número de telefono de Doctor" 
+														<input type="" name="doccontact" class="form-control" style="border-color: #2dc3cc"
+														placeholder="Ingrese el número de telefono de Doctor" 
 														required="true" maxlength="9" pattern="[0-9]+" title="Solamente Números">
 													</div>
 
@@ -215,11 +218,11 @@ if (isset($_POST['submit'])) {
 
 								</div>
 							</div>
-							<div class="col-lg-12 col-md-12">
+							<!--<div class="col-lg-12 col-md-12">
 								<div class="panel panel-white">
 
 
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>
