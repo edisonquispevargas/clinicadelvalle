@@ -174,6 +174,13 @@
 							</a>
 						</li>
 					</ul>
+					<ul class="sub-menu">
+						<li>
+							<a href="informe-Citas.php">
+								<span class="title">Infrome de Citas </span>
+							</a>
+						</li>
+					</ul>
 				<!--<li>
 					<a href="patient-search.php">
 						<div class="item-content">
