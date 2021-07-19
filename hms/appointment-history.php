@@ -14,7 +14,7 @@ if (isset($_GET['cancel'])) {
 
 <head>
 	<title>Usuario | Historial Citas</title>
-
+	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -100,7 +100,7 @@ if (isset($_GET['cancel'])) {
 														echo "Activo";
 													}
 													if (($row['userStatus'] == 0) && ($row['doctorStatus'] == 1)) {
-														echo "Cancelar";
+														echo "Cancelado";
 													}
 
 													if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 0)) {
@@ -112,7 +112,7 @@ if (isset($_GET['cancel'])) {
 														<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) { ?>
 															<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estas Seguro de que Quieres Cancelar Esta Cita?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar Cita</a>
 														<?php } else {
-															echo "Cancelar";
+															echo "Cancelado";
 														} ?>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">

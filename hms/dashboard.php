@@ -10,7 +10,7 @@ check_login();
 
 <head>
 	<title>Usuario | Principal</title>
-
+	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -45,18 +45,17 @@ check_login();
 							<div class="col-sm-8">
 								<h8 style="font-weight: 600;color: #2dc3cc;font-size: 25px; text-align: justify;
                                     text">
-                                    Bienvenido al sistema de reservas de la clinica del valle en este
-                                apartado podra hacer sus citas y ver su historial</h8>
+                                    Vienvenido al sistema de reservas de la clinica del valle en este
+                                apartado podra hacer sus citas médicas</h8>
 							</div>
-							<!--<ol class="breadcrumb">
+							<ol class="breadcrumb">
 								<li>
 									<span>Usuario</span>
 								</li>
 								<li class="active">
 									<span>Nombre</span>
 								</li>
-							</ol>-->
-						</div>
+							</ol>
 					</section>
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->

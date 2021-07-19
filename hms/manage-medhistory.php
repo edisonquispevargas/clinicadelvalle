@@ -11,7 +11,7 @@ check_login();
 
 <head>
 	<title>Registro Usuario | Ver Historial Medica</title>
-
+	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">

@@ -96,14 +96,14 @@ check_login();
 												<td><?php echo $row['postingDate']; ?></td>
 												<td>
 													<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
-														echo "Active";
+														echo "Activo";
 													}
 													if (($row['userStatus'] == 0) && ($row['doctorStatus'] == 1)) {
-														echo "Cancel by Patient";
+														echo "Cancelado por paciente";
 													}
 
 													if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 0)) {
-														echo "Cancel by Doctor";
+														echo "Cancelado por Doctor";
 													}
 													?></td>
 												<td>
@@ -111,10 +111,10 @@ check_login();
 														<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
 
 
-															echo "No Action yet";
+															echo "Sin acción todavía";
 														} else {
 
-															echo "Canceled";
+															echo "Cancelado";
 														} ?>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">

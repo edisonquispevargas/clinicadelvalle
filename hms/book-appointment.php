@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
 <head>
 	<title>Paciente | Reservar Cita</title>
-
+	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     <link href="vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
-    <link rel="stylesheet" href="assets/css/themes/theme-6.css" id="skin_color" />
+    <link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 	<script>
 		function getdoctor(val) {
 			$.ajax({
@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title" style="text-align: center; color: blue">Reservas Cita</h5>
+												<h5 class="panel-title" style="text-align: center; color: #2dc3cc;font-weight: 600">Reservar Cita</h5>
 											</div>
 											<div class="panel-body">
 												<p style="color:green;font-weight: 600;font-size: 20px;"><?php echo htmlentities($_SESSION['msg1']); ?>
@@ -219,7 +219,7 @@ if (isset($_POST['submit'])) {
 	<!-- end: JavaScript Event Handlers for this page -->
 	<!-- end: CLIP-TWO JAVASCRIPTS -->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
 
 </body>
 

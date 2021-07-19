@@ -72,10 +72,11 @@ if (isset($_GET['cancel'])) {
 										<tr>
 											<th class="center">#</th>
 											<th class="hidden-xs">Nombre Paciente</th>
+											
 											<th>Especialidad</th>
 											<th>Couta de Consultoria</th>
 											<th>Fecha / Hora Cita </th>
-											<th>Fecha de Creacion </th>
+							
 											<th>Estado</th>
 											<th>Acción</th>
 
@@ -91,18 +92,19 @@ if (isset($_GET['cancel'])) {
 											<tr>
 												<td class="center"><?php echo $cnt; ?>.</td>
 												<td class="hidden-xs"><?php echo $row['fname']; ?></td>
+												
 												<td><?php echo $row['doctorSpecialization']; ?></td>
 												<td><?php echo $row['consultancyFees']; ?></td>
 												<td><?php echo $row['appointmentDate']; ?> / <?php echo
 																									$row['appointmentTime']; ?>
 												</td>
-												<td><?php echo $row['postingDate']; ?></td>
+												
 												<td>
 													<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
 														echo "Activo";
 													}
 													if (($row['userStatus'] == 0) && ($row['doctorStatus'] == 1)) {
-														echo "Cancelar Paciente";
+														echo "Cancelado por el Paciente";
 													}
 
 													if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 0)) {
@@ -115,7 +117,7 @@ if (isset($_GET['cancel'])) {
 															<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estás seguro de que deseas cancelar esta cita ?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar</a>
 														<?php } else {
 
-															echo "Cancelar";
+															echo "Cancelado";
 														} ?>
 													</div>
 												</td>

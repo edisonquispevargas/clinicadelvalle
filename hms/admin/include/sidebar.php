@@ -177,7 +177,7 @@
 					<ul class="sub-menu">
 						<li>
 							<a href="informes-Citas.php">
-								<span class="title">Infrome de Citas </span>
+								<span class="title">Informe de Citas </span>
 							</a>
 						</li>
 					</ul>

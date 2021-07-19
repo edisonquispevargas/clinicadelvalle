@@ -5,14 +5,16 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 if (isset($_POST['submit'])) {
+	$dni = $_POST['DNI'];
 	$fname = $_POST['fname'];
+	$fapell = $_POST['fapell'];
 	$address = $_POST['address'];
 	$city = $_POST['city'];
 	$gender = $_POST['gender'];
 
-	$sql = mysqli_query($con, "Update users set fullName='$fname',address='$address',city='$city',gender='$gender' where id='" . $_SESSION['id'] . "'");
+	$sql = mysqli_query($con, "Update users set fullName='$fname',DNI='$dni',address='$address',city='$city',gender='$gender',apellidos='$fapell' where id='" . $_SESSION['id'] . "'");
 	if ($sql) {
-		$msg = "Con Exito Se Actualizo su Perfil!!";
+		$msg = "Se Actualizo con Exito su Perfil!!";
 	}
 }
 ?>
@@ -54,7 +56,7 @@ if (isset($_POST['submit'])) {
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Usuario | Modificar Perfil</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Paciente| Modificar Perfil</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
@@ -86,14 +88,19 @@ if (isset($_POST['submit'])) {
 												$sql = mysqli_query($con, "select * from users where id='" . $_SESSION['id'] . "'");
 												while ($data = mysqli_fetch_array($sql)) {
 												?>
-													<h4><?php echo htmlentities($data['fullName']); ?>Perfil</h4>
-													<p><b> Fecha Registro Pefil </b><?php echo htmlentities($data['regDate']); ?></p>
+													<h4><?php echo htmlentities($data['fullName']); ?> - Perfil</h4>
+													<p><b> Fecha Registro Perfil: </b><?php echo htmlentities($data['regDate']); ?></p>
 													<?php if ($data['updationDate']) { ?>
 														<p><b> Fecha Ultima Actualizacion Perfil:  </b><?php echo htmlentities($data['updationDate']); ?></p>
 													<?php } ?>
 													<hr />
 													<form role="form" name="edit" method="post">
-
+													<div class="form-group">
+															<label for="fname">
+																DNI
+															</label>
+															<input type="text" name="DNI" class="form-control" value="<?php echo htmlentities($data['DNI']); ?>">
+														</div>
 
 														<div class="form-group">
 															<label for="fname">
@@ -102,16 +109,22 @@ if (isset($_POST['submit'])) {
 															<input type="text" name="fname" class="form-control" value="<?php echo htmlentities($data['fullName']); ?>">
 														</div>
 
+														<div class="form-group">
+															<label for="fname">
+																Apellidos
+															</label>
+															<input type="text" name="fapell" class="form-control" value="<?php echo htmlentities($data['apellidos']); ?>">
+														</div>
 
 														<div class="form-group">
 															<label for="address">
-																Direccion
+																Dirección
 															</label>
 															<textarea name="address" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
 														</div>
 														<div class="form-group">
 															<label for="city">
-																Ciudad
+																Telefono
 															</label>
 															<input type="text" name="city" class="form-control" required="required" value="<?php echo htmlentities($data['city']); ?>">
 														</div>
@@ -137,7 +150,7 @@ if (isset($_POST['submit'])) {
 															<input type="email" name="uemail" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['email']); ?>">
 															<a href="change-emaild.php">Modificar el Email</a>
 														</div>
-														<button type="submit" name="submit" class="btn btn-o btn-primary">
+														<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
 															Modificar
 														</button>
 													</form>
