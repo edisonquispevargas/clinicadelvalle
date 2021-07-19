@@ -176,8 +176,12 @@
 					</ul>
 					<ul class="sub-menu">
 						<li>
-							<a href="informe-Citas.php">
+							<a href="informes-Citas.php">
 								<span class="title">Infrome de Citas </span>
+							</a>
+						</li>
+					</ul>
+					
 							</a>
 						</li>
 					</ul>
