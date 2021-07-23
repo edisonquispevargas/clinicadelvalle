@@ -12,8 +12,7 @@ if (isset($_POST['submit'])) {
 	$docemail = $_POST['docemail'];
 	$sql = mysqli_query($con, "Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='" . $_SESSION['id'] . "'");
 	if ($sql) {
-		echo "<script>alert('Detalles del doctor actualizados con éxito');</script>";
-		header('location:inicio.php');
+        $msg = "Datos actualizados con éxito!!";
 	}
 }
 ?>
@@ -69,7 +68,10 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-
+                                <h5 style="color: green; font-size:18px; ">
+                                    <?php if ($msg) {
+                                        echo htmlentities($msg);
+                                    } ?> </h5>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -83,7 +85,7 @@ if (isset($_POST['submit'])) {
 													<h4>Doctor (a): <?php echo htmlentities($data['doctorName']); ?>-Perfil</h4>
 													<p><b>Fecha Registro: </b><?php echo htmlentities($data['creationDate']); ?></p>
 													<?php if ($data['updationDate']) { ?>
-														<p><b>Fecha Ultima Actualizacion: </b><?php echo htmlentities($data['updationDate']); ?></p>
+													<!--<p><b>Fecha Ultima Actualizacion: </b><?php echo htmlentities($data['updationDate']); ?></p>-->
 													<?php } ?>
 													<hr />
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
@@ -91,7 +93,7 @@ if (isset($_POST['submit'])) {
 															<label for="DoctorSpecialization">
 																Especialidad
 															</label>
-															<select name="Doctorspecialization" class="form-control" required="required">
+															<select name="Doctorspecialization" class="form-control" required="required" style="border-color: #2dc3cc">
 																<option value="<?php echo htmlentities($data['specilization']); ?>">
 																	<?php echo htmlentities($data['specilization']); ?></option>
 																<?php $ret = mysqli_query($con, "select * from doctorspecilization");
@@ -108,42 +110,54 @@ if (isset($_POST['submit'])) {
 															<label for="doctorname">
 																DNI Doctor
 															</label>
+															<span class="input-icon">
 															<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['dni']); ?>">
+															<i class="fa fa-book"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="doctorname">
 																Nombre Doctor
 															</label>
+															<span class="input-icon">
 															<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['doctorName']); ?>">
+															<i class="fa fa-user"></i></span>
 														</div>
 
 
 														<div class="form-group">
 															<label for="address">
-																Direccion Clinica Doctor
+																Dirección Doctor
 															</label>
-															<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
+															<span class="input-icon">
+															<textarea name="clinicaddress" class="form-control" style="border-color: #2dc3cc"><?php echo htmlentities($data['address']); ?></textarea>
+															<i class="fa fa-map-marker"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Horario de Consultorio Medico
 															</label>
+															<span class="input-icon">
 															<input type="text" name="docfees" class="form-control" required="required" value="<?php echo htmlentities($data['docFees']); ?>">
+															<i class="fa fa-clock-o"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="fess">
 																Contacto
 															</label>
+															<span class="input-icon">
 															<input type="text" name="doccontact" class="form-control" required="required" value="<?php echo htmlentities($data['contactno']); ?>">
+															<i class="fa fa-phone"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="fess">
 																Email Doctor
 															</label>
+															<span class="input-icon">
 															<input type="email" name="docemail" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['docEmail']); ?>">
+															<i class="fa fa-envelope"></i></span>
 														</div>
 
 

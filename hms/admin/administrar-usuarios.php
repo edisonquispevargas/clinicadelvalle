@@ -74,13 +74,13 @@ if (isset($_GET['del'])) {
 										<tr>
 											<th class="center">#</th>
 											<th>Nombres</th>
-											<th class="hidden-xs">Direccion</th>
+											<th class="hidden-xs">Dirección</th>
 											<th>Ciudad</th>
 											<th>Sexo </th>
 											<th>Email </th>
-											<th>Fecha Creacion </th>
-											<th>Fecha Modificacion </th>
-											<th>Accion</th>
+											<th>Fecha Creación </th>
+											<!--<th>Fecha Modificacion </th>-->
+											<th>Acción</th>
 
 										</tr>
 									</thead>
@@ -100,8 +100,7 @@ if (isset($_GET['del'])) {
 												<td><?php echo $row['gender']; ?></td>
 												<td><?php echo $row['email']; ?></td>
 												<td><?php echo $row['regDate']; ?></td>
-												<td><?php echo $row['updationDate']; ?>
-												</td>
+
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<a href="edit-users.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>

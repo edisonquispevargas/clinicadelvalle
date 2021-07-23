@@ -66,7 +66,8 @@ if (isset($_GET['del'])) {
 
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15">Administrar <span class="text-bold"style="color: #0a6aa1;">Leer Consultas</span></h5>
+								<h5 class="over-title margin-bottom-15"style="color: #2dc3cc;font-weight: 600;font-size: 15px">Administrar -
+                                    <span class="text-bold"style="color: #2dc3cc;"> Consultas Atendidas</span></h5>
 								<table class="table table-hover" id="sample-table-1">
 									<thead>
 										<tr>
@@ -74,8 +75,8 @@ if (isset($_GET['del'])) {
 											<th>Nombre</th>
 											<th class="hidden-xs">Email</th>
 											<th>Contacto</th>
-											<th>Mesaje </th>
-											<th>Accion</th>
+											<th>Mensaje </th>
+											<th>Acción</th>
 
 										</tr>
 									</thead>

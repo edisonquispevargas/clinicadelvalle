@@ -75,9 +75,9 @@ if (isset($_GET['cancel'])) {
 											<th>Especialidad</th>
 											<th>Cuota Consultoria</th>
 											<th>Fecha/Hora Cita </th>
-											<th>Fecha Creacion Cita </th>
+											<th>Fecha/Creación/Cita </th>
 											<th>Estado</th>
-											<th>Accion</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>

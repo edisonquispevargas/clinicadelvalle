@@ -70,9 +70,9 @@ check_login();
 											<th>Nombre Paciente</th>
 											<th>Contacto Paciente</th>
 											<th>Sexo Paciente </th>
-											<th>Fecha Creacion </th>
+											<th>Fecha Creación </th>
 											<!--<th>Fecha Modificacion </th>-->
-											<th>Accion</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>

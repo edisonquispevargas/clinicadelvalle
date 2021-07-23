@@ -17,8 +17,7 @@ if (isset($_POST['submit'])) {
 	$medhis = $_POST['medhis'];
 	$sql = mysqli_query($con, "update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis',dnipaciente='$patdni' where ID='$eid'");
 	if ($sql) {
-		echo "<script>alert('Datos del paciente actualizados correctamente');</script>";
-		header('location:Gestionar-paciente.php');
+        $msg = "Datos actualizados con éxito !!";
 	}
 }
 ?>
@@ -73,6 +72,10 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
+                                <h5 style="color: green; font-size:15px;font-weight: 600; ">
+                                    <?php if ($msg) {
+                                        echo htmlentities($msg);
+                                    } ?> </h5>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -92,26 +95,34 @@ if (isset($_POST['submit'])) {
 															<label for="doctorname">
 																DNI Paciente
 															</label>
+															<span class="input-icon">
 															<input type="text" name="patdni" class="form-control" value="<?php echo $row['dnipaciente']; ?>" required="true">
+															<i class="fa fa-book"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="doctorname">
 																Nombre Paciente
 															</label>
+															<span class="input-icon">
 															<input type="text" name="patname" class="form-control" value="<?php echo $row['PatientName']; ?>" required="true">
+															<i class="fa fa-user"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Contacto Paciente
 															</label>
+															<span class="input-icon">
 															<input type="text" name="patcontact" class="form-control" value="<?php echo $row['PatientContno']; ?>" required="true" maxlength="10" pattern="[0-9]+">
+															<i class="fa fa-phone"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Email Paciente
 															</label>
+															<span class="input-icon">
 															<input type="email" id="patemail" name="patemail" class="form-control" value="<?php echo $row['PatientEmail']; ?>" readonly='true'>
 															<span id="email-availability-status"></span>
+															<i class="fa fa-envelope"></i></span>
 														</div>
 														<div class="form-group">
 															<label class="control-label">Sexo: </label>
@@ -129,25 +140,33 @@ if (isset($_POST['submit'])) {
 															<label for="address">
 																Direccion Paciente
 															</label>
+															<span class="input-icon">
 															<textarea name="pataddress" class="form-control" required="true"><?php echo $row['PatientAdd']; ?></textarea>
+															<i class="fa fa-map-marker"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Edad Paciente
 															</label>
+															<span class="input-icon">
 															<input type="text" name="patage" class="form-control" value="<?php echo $row['PatientAge']; ?>" required="true">
+															<i class="fa fa-calendar"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Historial Medico del Paciente
 															</label>
-															<textarea type="text" name="medhis" class="form-control" placeholder="Enter Patient Medical History(if any)" required="true"><?php echo $row['PatientMedhis']; ?></textarea>
+															<span class="input-icon">
+															<textarea type="text" name="medhis" class="form-control" placeholder="Enter Patient Medical History(if any)" ><?php echo $row['PatientMedhis']; ?></textarea>
+															<i class="fa fa-user-md"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="fess">
 																Fecha Creacion
 															</label>
+															<span class="input-icon">
 															<input type="text" class="form-control" value="<?php echo $row['CreationDate']; ?>" readonly='true'>
+															<i class="fa fa-calendar"></i></span>
 														</div>
 													<?php } ?>
 													<button type="submit" name="submit" id="submit" class="btn btn-primary"style="margin-left: 40%">

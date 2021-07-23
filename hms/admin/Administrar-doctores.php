@@ -8,7 +8,7 @@ check_login();
 
 if (isset($_GET['del'])) {
 	mysqli_query($con, "delete from doctors where id = '" . $_GET['id'] . "'");
-	$_SESSION['msg'] = " doctor eleminado correctamente !!";
+	$_SESSION['msg'] = " Doctor eleminado correctamente !!";
 }
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,8 @@ if (isset($_GET['del'])) {
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
 					<form role="form" method="post" name="search" action="agregar-doctor.php" class="formulariob">
-
+                        <p style="color:green;font-size: 15px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
+                            <?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 
                             <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar Doctor">
 
@@ -73,18 +74,16 @@ if (isset($_GET['del'])) {
 							<div class="col-md-12">
 								<h5 class="over-title margin-bottom-15">
                                     <span class="text-bold" style="color: #0a6aa1; margin-left: 42%">Gestionar Doctores</span></h5>
-								<p style="color:green;font-size: 20px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
-									<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 								<table class="table">
 									<thead>
 										<tr >
 											<th class="center">#</th>
-											<th>Especializacion</th>
+											<th>Especialidad</th>
                                             <th>DNI</th>
 											<th class="hidden-xs">Nombre Doctor</th>
                                             <th>Apellidos </th>
-											<th>Fecha Creacion </th>
-											<th style="color: white;">Accion</th>
+											<th>Fecha Creación </th>
+											<th style="color: white;">Acción</th>
 										</tr>
 									</thead>
 									<tbody>

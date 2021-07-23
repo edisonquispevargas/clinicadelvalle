@@ -68,7 +68,7 @@ check_login();
 										<i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
 										<h2 style="font-weight: 600;color: #2dc3cc;">Mi Perfil</h2>
 										<p class="links cl-effect-1">
-											<a href="edit-profile.php">
+											<a href="editar-perfil.php">
 												Modificar Perfil
 											</a>
 										</p>
@@ -82,7 +82,7 @@ check_login();
 										<h2 style="font-weight: 600;color: #2dc3cc;">Mis Citas</h2>
 
 										<p class="cl-effect-1">
-											<a href="appointment-history.php">
+											<a href="historial-citas.php">
 												Ver Historial Citas
 											</a>
 										</p>
@@ -93,10 +93,10 @@ check_login();
 								<div class="panel panel-white no-radius text-center">
 									<div class="panel-body" style="font-weight: 600; ">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-book fa-stack-1x fa-inverse"></i> </span>
-										<h2 style="font-weight: 600;color: #2dc3cc;"> Reserve mi Cita</h2>
+										<h2 style="font-weight: 600;color: #2dc3cc;"> Reservar mi Cita</h2>
 
 										<p class="links cl-effect-1">
-											<a href="book-appointment.php">
+											<a href="reservar-cita.php">
 												Reservar una Cita
 											</a>
 										</p>

@@ -59,9 +59,10 @@ check_login();
                                     Vista <span class="text-bold"style="color: #0a6aa1; ">Paciente</span></h5>
 
                                 <form role="form" method="post" name="search" action="buscar-paciente.php" class="formulariob">
-
+								<span class="input-icon">
                                         <input type="text" name="searchdata" id="searchdata" value="" required='true' placeholder="Buscar paciente">
-                                        <input type="submit" name="search" id="submit" class="btn_buscar" value="Buscar">
+                                        <i class="fa fa-search"></i></span>
+										<input type="submit" name="search" id="submit" class="btn_buscar" value="Buscar">
 
                                 </form>
 
@@ -73,7 +74,7 @@ check_login();
 											<th>Nombre Paciente</th>
 											<th>Telefono Paciente</th>
 											<th>Sexo Paciente</th>
-											<th>Fecha Creacion </th>
+											<th>Fecha Creación </th>
 
 											<th>Acción</th>
 										</tr>

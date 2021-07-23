@@ -72,7 +72,8 @@ if (isset($_POST['update'])) {
 
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15">Gestionar <span class="text-bold">Detalle Consulta</span></h5>
+								<h5 class="over-title margin-bottom-15" style="color: #2dc3cc;font-weight: 600;text-align:
+								 center;font-size: 20px">Gestionar <span class="text-bold" style="color: #2dc3cc;font-weight: 600">Consultas</span></h5>
 								<table class="table table-hover" id="sample-table-1">
 
 									<tbody>

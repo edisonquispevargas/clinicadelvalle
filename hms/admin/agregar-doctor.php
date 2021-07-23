@@ -119,6 +119,7 @@ if (isset($_POST['submit'])) {
 														<label for="DoctorSpecialization" style="color: black;">
 															Especialidad Doctor
 														</label>
+														
 														<select name="Doctorspecialization" class="form-control" required="true">
 															<option value="">Seleccionar especialidad</option>
 															<?php $ret = mysqli_query($con, "select * from doctorspecilization");
@@ -130,29 +131,36 @@ if (isset($_POST['submit'])) {
 															<?php } ?>
 
 														</select>
+														
 													</div>
                                                     <div class="form-group">
-                                                        <label for="doctordni" style="color: black;">
+                                                       <label for="doctordni" style="color: black;">
                                                             DNI Doctor
                                                         </label>
+														<span class="input-icon">
                                                         <input type="text" name="docdni" class="form-control" placeholder="Ingrese DNI del doctor" required="true"
 														title="Solamente Números" pattern="[0123456789]+" maxlength="8">
+														<i class="fa fa-book"></i></span>
                                                     </div>
 
 													<div class="form-group">
 														<label for="doctorname" style="color: black;">
 															Nombre Doctor
 														</label>
+														<span class="input-icon">
 														<input type="text" name="docname" class="form-control" placeholder="Ingrese el nombre del doctor" required="true"
 														pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solamente letras de A Z">
+														<i class="fa fa-user"></i></span>
 													</div>
 
 													<div class="form-group">
 														<label for="doctorapellido" style="color: black;">
 															Apellidos Doctor
 														</label>
+														<span class="input-icon">
 														<input type="text" name="docapellido" class="form-control" placeholder="Ingrese el apellido del doctor" 
 														required="true" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solamente letras de A Z">
+														<i class="fa fa-user"></i></span>
 													</div>
 
 
@@ -160,33 +168,42 @@ if (isset($_POST['submit'])) {
 														<label for="address" style="color: black;">
 															Direccion Doctor
 														</label>
+														<span class="input-icon">
 														<textarea name="clinicaddress" class="form-control" style="border-color: #2dc3cc"
-														placeholder="Ingrese la dirección de la clínica del médico" required="true"></textarea>
+														placeholder="   Ingrese la dirección de la clínica del médico" required="true"></textarea>
+														<i class="fa fa-map-marker"></i></span>
+													
 													</div>
 													<div class="form-group">
 														<label for="fess" style="color: black;">
-															Tarifas de Consultoria Doctor
+															Tarifa de Consultoria Doctor
 														</label>
+														<span class="input-icon">
 														<input type="number" name="docfees" class="form-control"style="border-color: #2dc3cc"
 														 placeholder="Ingrese las tarifas de consultoría médica" 
 														required="true">
+														<i class="fa fa-usd"></i></span>
 													</div>
 
 													<div class="form-group">
 														<label for="fess"style="color: black">
 															Contacto Doctor
 														</label>
+														<span class="input-icon">
 														<input type="" name="doccontact" class="form-control" style="border-color: #2dc3cc"
 														placeholder="Ingrese el número de telefono de Doctor" 
 														required="true" maxlength="9" pattern="[0-9]+" title="Solamente Números">
+														<i class="fa fa-phone"></i></span>
 													</div>
 
 													<div class="form-group">
 														<label for="fess" style="color: black;">
 															Email Doctor
 														</label>
+														<span class="input-icon">
 														<input type="email" id="docemail" name="docemail" class="form-control" placeholder="Ingrese Email del Doctor" required="true" onBlur="checkemailAvailability()">
 														<span id="email-availability-status"></span>
+														<i class="fa fa-envelope"></i></span>
 													</div>
 
 
@@ -196,14 +213,18 @@ if (isset($_POST['submit'])) {
 														<label for="exampleInputPassword1" style="color: black;">
 															Contraseña
 														</label>
+														<span class="input-icon">
 														<input type="password" name="npass" class="form-control" placeholder="ingresar una contraseña" required="required">
+														<i class="fa fa-unlock-alt"></i></span>
 													</div>
 
 													<div class="form-group">
 														<label for="exampleInputPassword2" style="color: black;">
 															Confirmar Contraseña
 														</label>
+														<span class="input-icon">
 														<input type="password" name="cfpass" class="form-control" placeholder="Repetir contraseña" required="required">
+														<i class="fa fa-unlock-alt"></i></span>
 													</div>
 
 

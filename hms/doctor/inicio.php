@@ -44,7 +44,7 @@ check_login();
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Doctor | CLINICA DEL VALLE</h1>
+								<h1 class="mainTitle" style="color: #ffffff;font-weight: 600;">Doctor | CLINICA DEL VALLE</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>

@@ -43,7 +43,7 @@ header .navbar-collapse {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) !important;
 }
 header .navbar-collapse .navbar-right > li > a {
-  color: #777;
+  color: #f0f0f0;
 }
 header .navbar-collapse .navbar-right > li > a i {
   color: #007aff !important;

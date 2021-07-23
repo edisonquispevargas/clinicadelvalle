@@ -71,24 +71,25 @@ if (isset($_GET['del'])) {
 
 								<div class="row margin-top-30">
 									<div class="col-lg-6 col-md-12">
-										<div class="panel panel-white">
+										<div class="panel panel-white"style="background: #536bf1">
 											<div class="panel-heading">
-												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center;">Especialidad Doctor</h5>
+												<h5 class="panel-title" style="color: #FFFFFF;font:500 18px/1 'Roboto',sans-serif;text-align: center;">Especialidad Doctor</h5>
 											</div>
 											<div class="panel-body">
 												
 												<form role="form" name="dcotorspcl" method="post">
 													<div class="form-group">
-														<label for="exampleInputEmail1" style="color: black">
-															Especialidad Doctor
+														<label for="exampleInputEmail1" style="color: #FFFFFF;font:400 13px/1 'Roboto',sans-serif; ">
+															Ingrese una Especialidad
 														</label>
-														<input type="text" name="doctorspecilization" required class="form-control" placeholder="Ingrese una especialidad">
-																	
+														<span class="input-icon">
+														<input type="text" name="doctorspecilization" required class="form-control" style="border-radius: 10px">
+														<i class="fa fa-user-md"></i></span>
 													</div>
-													<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
+													<button type="submit" name="submit" class="btn btn-dark" style="margin-left: 40%;color: black">
 														Aceptar
 													</button>
-													<p style="color:green;font-size: 15px;font-weight: 600; text-emphasis: center;"><?php echo htmlentities($_SESSION['msg']); ?>
+													<p style="color: #FFFFFF;font:400 13px/1 'Roboto',sans-serif; text-align: center; margin-top: 15px"><?php echo htmlentities($_SESSION['msg']); ?>
 													<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 												</form>
 											</div>
@@ -113,9 +114,9 @@ if (isset($_GET['del'])) {
 										<tr>
 											<th class="center">#</th>
 											<th> Nombre Especialidad</th>
-											<th class="hidden-xs">Fecha Creacion</th>
-											<th>Fecha Modificacion</th>
-											<th>Accion</th>
+											<th class="hidden-xs">Fecha Creación</th>
+											<th>Fecha Modificación</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>

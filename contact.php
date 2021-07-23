@@ -86,7 +86,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 						    	<span><textarea name="description" required="true"> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" name="submit" value="Enviar"></span>
+						   		<span><input type="submit" name="submit" value="Enviar" style="margin-left: 30%"></span>
 						  </div>
 					    </form>
 				    </div>

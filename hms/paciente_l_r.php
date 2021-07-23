@@ -1,7 +1,7 @@
 <?php
 session_start();
   if(isset($_SESSION['users'])){
-     header ("location: dashboard.php");
+     header ("location: inicio.php");
   }
 
   error_reporting(0);
@@ -12,7 +12,7 @@ session_start();
   $num=mysqli_fetch_array($ret);
   if($num>0)
   {
-  $extra="dashboard.php";//
+  $extra="inicio.php";//
   $_SESSION['login']=$_POST['username'];
   $_SESSION['id']=$num['id'];
   $host=$_SERVER['HTTP_HOST'];
@@ -32,7 +32,7 @@ session_start();
   $status=0;
   mysqli_query($con,"insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
   $_SESSION['errmsg']="Usuario y/o Contraseña Incorrecta";
-  $extra="user-login.php";
+  $extra="paciente_l_r.php";
   $host  = $_SERVER['HTTP_HOST'];
   $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
   header("location:http://$host$uri/$extra");
@@ -82,21 +82,22 @@ session_start();
                 <!--login-->
                 <form class="formulario__login" method="post">
                     <h2>Iniciar sesion</h2>
-                    <input type="text" placeholder="Correo Electronico" name="username"  id="email">
-                    <input type="password" placeholder="Contraseña" name="password" id="username">
-                    <a href="" style="font-size: 12px; margin-top: 35px;">
+                    <input type="text" placeholder="Correo Electronico" name="username"  id="email" required>
+                    <input type="password" placeholder="Contraseña" name="password" id="username" required><br><br>
+                    <a href="" style="font-size: 12px; margin-top: 35px;color: blue;">
 									¿Olvidaste tu Contraseña?
 								</a><br>
-                    <button name="submit" type="submit">Ingresar</button>
+                    <button name="submit" type="submit">Ingresar</button><br><br>
+                    <span style="color:red;font-weight: 200;font-size: 14px;margin-left: 20%;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
                 </form>
             
               <!--login-->
             <form action="registro_paciente.php" method="POST" class="formulario__register" >
                 <h2>Registrarse</h2>
-                    <input type="text" placeholder="DNI" name="DNI" required>
+                    <input type="text" placeholder="DNI" name="DNI" required title="Solamente Números" pattern="[0123456789]+" maxlength="8">
                     <input type="text" placeholder="Nombre" name="full_name" required>
                     <input type="text" placeholder="Apellidos" name="apellidos" required>
-                    <input type="text" placeholder="Telefono" name="city" required>
+                    <input type="text" placeholder="Telefono" name="city" required title="Solamente Números" pattern="[0123456789]+" maxlength="9">
                     <input type="text" placeholder="Dirección" name="address">
                     <div class="genero">
 								<label class="block">
@@ -118,7 +119,7 @@ session_start();
                     <p style="font-size: 12px; margin-top: 10px; text-align: center; color: #2dc3cc;">
 								Ingrese los detalles de su cuenta a continuación:
 				    </p>
-                    <input type="text" placeholder="Email" name="email"  id="email" required>
+                    <input type="email" placeholder="Email" name="email"  id="email" required>
                     <input type="password" placeholder="Contraseña" name = "password" id="password" required>
                     <input type="password" placeholder="Contraseña de nuevo" name="password_again" id="password_again" required>
                     <button>Registrarse</button>

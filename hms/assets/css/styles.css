@@ -694,7 +694,7 @@ h5.over-title {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 10px;
-  color: #0a0a0a;
+  color: #ffffff;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0;
@@ -4652,8 +4652,8 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
   appearance: none;
   background-color: #FFFFFF;
   background-image: none;
-  border: 1px solid #c8c7cc;
-  border-radius: 0 0 0 0 !important;
+  border: 1px solid #2dc3cc;
+
   color: #5b5b60;
   font-family: inherit;
   font-size: 14px;
@@ -4887,7 +4887,6 @@ span.input-help > input {
 select.form-control {
   background-color: #FFFFFF;
   border: 1px solid #2dc3cc;
-  border-radius: 0 0 0 0;
   color: #5b5b60;
 }
 

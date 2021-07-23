@@ -72,9 +72,9 @@ check_login();
 											<th>Especialidad</th>
 											<th>Cuota Consultoria</th>
 											<th>Fecha/Hora de Cita </th>
-											<th>Fecha Creacion Cita </th>
+
 											<th>Estado Actual</th>
-											<th>Accion</th>
+											<th>Acción</th>
 
 										</tr>
 									</thead>
@@ -93,7 +93,7 @@ check_login();
 												<td><?php echo $row['appointmentDate']; ?> / <?php echo
 																									$row['appointmentTime']; ?>
 												</td>
-												<td><?php echo $row['postingDate']; ?></td>
+
 												<td>
 													<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
 														echo "Activo";

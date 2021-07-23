@@ -153,51 +153,56 @@ if (isset($_POST['submit'])) {
                     <button class="btn btn-primary waves-effect waves-light w-lg" data-toggle="modal" data-target="#myModal">Agregar Historial Medico</button></p>
 
                   <?php  ?>
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                    <div class="modal-dialog" role="document" >
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel" style="color: #2dc3cc;font-weight: 600;margin-left: 40%">Agregar Historial Medico</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <h5 class="modal-title" id="exampleModalLabel" style="color: #2dc3cc;font-weight: 800;margin-left: 35%">Agregar Historial Medico</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -18px;color: black">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          <table class="table table-bordered table-hover data-tables">
+                          <table class="table table-bordered table-hover data-tables" >
 
                             <form method="post" name="submit">
 
                               <tr>
                                 <th>Motivo consulta:</th>
                                 <td>
-                                  <input name="bp" placeholder="Ingrese el motivo de la consulta" class="form-control wd-450" required="true"></td>
+                                  <input name="bp" placeholder="Ingrese el motivo de la consulta" class="form-control wd-450"
+                                         required="true" style="border-color: #2dc3cc"></td>
                               </tr>
                               <tr>
                                 <th>Diagnostico actual:</th>
                                 <td>
-                                  <input name="bs" placeholder="Diagnostico actual" class="form-control wd-450" required="true"></td>
+                                  <textarea name="bs" placeholder="Diagnostico actual" class="form-control wd-450" required="true"
+                                            style="border-color: #2dc3cc"></textarea></td>
                               </tr>
                               <tr>
                                 <th>Descripción:</th>
                                 <td>
-                                  <input name="weight" placeholder="Descripción" class="form-control wd-450" required="true"></td>
+                                  <textarea name="weight" placeholder="Descripción" class="form-control wd-450" required="true"
+                                            style="border-color: #2dc3cc"></textarea></td>
                               </tr>
                               <tr>
-                                <th>Temperatura Corporal :</th>
+                                <th>Temperatura Corporal:</th>
                                 <td>
-                                  <input name="temp" placeholder="Temperatura del paciente" class="form-control wd-450" required="true"></td>
+                                  <input name="temp" placeholder="Temperatura del paciente" class="form-control wd-450" required="true"
+                                         style="border-color: #2dc3cc"></td>
                               </tr>
 
                               <tr>
                                 <th>Receta Medica:</th>
                                 <td>
-                                  <textarea name="pres" placeholder="Prescripción Médica" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+                                  <textarea name="pres" placeholder="Prescripción Médica" rows="10" cols="10" class="form-control wd-450" required="true"
+                                            style="border-color: #2dc3cc;"></textarea></td>
                               </tr>
 
                           </table>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-success"" data-dismiss="modal">Cerrar</button>
                           <button type="submit" name="submit" class="btn btn-primary">Aceptar</button>
 
                           </form>

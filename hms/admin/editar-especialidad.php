@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 														<label for="exampleInputEmail1">
 															Modificar Especialida Doctor
 														</label>
-
+														<span class="input-icon">
 														<?php
 
 														$id = intval($_GET['id']);
@@ -87,6 +87,8 @@ if (isset($_POST['submit'])) {
 														while ($row = mysqli_fetch_array($sql)) {
 														?> <input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization']; ?>">
 														<?php } ?>
+														<i class="fa fa-user-md"></i></span>
+
 													</div>
 
 

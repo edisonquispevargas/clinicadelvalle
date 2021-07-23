@@ -5,6 +5,11 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 
+if (isset($_GET['del'])) {
+    mysqli_query($con, "delete from tblpatient where id = '" . $_GET['id'] . "'");
+    $_SESSION['msg'] = " Paciente eleminado correctamente !!";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +60,8 @@ check_login();
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
+                                <p style="color:green;font-size: 15px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
+                                    <?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 								<h5 class="over-title margin-bottom-15"style="color: #0a6aa1; margin-left: 42%"> <span class="text-bold"> Gestionar Paciente</span></h5>
 
                                 <form role="form" method="post" name="search" action="buscar.php" class="formulariob">
@@ -78,9 +85,9 @@ check_login();
 											<th>Nombre Paciente</th>
 											<th>Telefono Paciente</th>
 											<th>Sexo Paciente </th>
-											<th>Fecha Creacion </th>
+											<th>Fecha Creación </th>
 										<!--	<th>Fecha Modificacion</th>-->
-											<th>Accion</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -101,7 +108,10 @@ check_login();
 												</td>
 												<td>
 
-													<a href="editar-paciente.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> || <a href="vista-paciente.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a> || <a href="?editid=<?php echo $row['ID']; ?>"><i class="fa fa-trash"></i></a> 
+													<a href="editar-paciente.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> ||
+                                                    <a href="vista-paciente.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a> ||
+                                                    <a href="Gestionar-paciente.php?id=<?php echo $row['ID']; ?>&del=delete" onclick="return confirm('Está seguro de que desea eliminar?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash"></i></a>
+
 
 												</td>
 											</tr>

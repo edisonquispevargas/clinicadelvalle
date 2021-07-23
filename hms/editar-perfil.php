@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
 	$sql = mysqli_query($con, "Update users set fullName='$fname',DNI='$dni',address='$address',city='$city',gender='$gender',apellidos='$fapell' where id='" . $_SESSION['id'] . "'");
 	if ($sql) {
-		$msg = "Se Actualizo con Exito su Perfil!!";
+		$msg = "Sus datos se actualizaron con éxito !!";
 	}
 }
 ?>
@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-								<h5 style="color: green; font-size:20px;font-weight: 600; ">
+								<h5 style="color: green; font-size:15px;font-weight: 600; ">
 									<?php if ($msg) {
 										echo htmlentities($msg);
 									} ?> </h5>
@@ -99,34 +99,44 @@ if (isset($_POST['submit'])) {
 															<label for="fname">
 																DNI
 															</label>
-															<input type="text" name="DNI" class="form-control" value="<?php echo htmlentities($data['DNI']); ?>">
+															<span class="input-icon">
+															<input type="text" name="DNI" class="form-control" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['DNI']); ?>">
+															<i class="fa fa-book"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="fname">
 																Nombre Usuario
 															</label>
-															<input type="text" name="fname" class="form-control" value="<?php echo htmlentities($data['fullName']); ?>">
+															<span class="input-icon">
+															<input type="text" name="fname" class="form-control" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['fullName']); ?>">
+															<i class="fa fa-user"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="fname">
 																Apellidos
 															</label>
-															<input type="text" name="fapell" class="form-control" value="<?php echo htmlentities($data['apellidos']); ?>">
+															<span class="input-icon">
+															<input type="text" name="fapell" class="form-control" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['apellidos']); ?>">
+															<i class="fa fa-user"></i></span>
 														</div>
 
 														<div class="form-group">
 															<label for="address">
 																Dirección
 															</label>
-															<textarea name="address" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
+															<span class="input-icon">
+															<textarea name="address" class="form-control" style="border-color: #2dc3cc"><?php echo htmlentities($data['address']); ?></textarea>
+															<i class="fa fa-map-marker"></i></span>
 														</div>
 														<div class="form-group">
 															<label for="city">
 																Telefono
 															</label>
-															<input type="text" name="city" class="form-control" required="required" value="<?php echo htmlentities($data['city']); ?>">
+															<span class="input-icon">
+															<input type="text" name="city" class="form-control" required="required" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['city']); ?>">
+															<i class="fa fa-phone"></i></span>
 														</div>
 
 														<div class="form-group">
@@ -147,8 +157,10 @@ if (isset($_POST['submit'])) {
 															<label for="fess">
 																Email Usuario
 															</label>
-															<input type="email" name="uemail" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['email']); ?>">
+															<span class="input-icon">
+															<input type="email" name="uemail" class="form-control" readonly="readonly" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['email']); ?>">
 															<a href="change-emaild.php">Modificar el Email</a>
+															<i class="fa fa-envelope"></i></span>
 														</div>
 														<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
 															Modificar

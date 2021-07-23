@@ -41,7 +41,7 @@
 				</a>
 				<ul class="dropdown-menu dropdown-dark">
 					<li>
-						<a href="edit-profile.php">
+						<a href="editar-perfil.php">
 							Mi Perfil
 						</a>
 					</li>

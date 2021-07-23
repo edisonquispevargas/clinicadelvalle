@@ -126,6 +126,7 @@ if (isset($_POST['submit'])) {
 														<label for="doctor" style="color: black">
 															Doctor
 														</label>
+														
 														<select name="doctor" class="form-control" id="doctor" onChange="getfee(this.value);" required="required">
 															<option value="">Seleccionar Doctor</option>
 														</select>
@@ -134,22 +135,27 @@ if (isset($_POST['submit'])) {
 														<label for="consultancyfees" style="color: black">
 															Tarifas Consultorias
 														</label>
+														<span class="input-icon">
 														<select name="fees" class="form-control" id="fees" readonly>
-
 														</select>
+														<i class="fa fa-usd"></i></span>
 													</div>
 
 													<div class="form-group">
 														<label for="AppointmentDate" style="color: black">
 															Fecha
 														</label>
-														<input class="form-control datepicker" name="appdate" required="required" data-date-format="yyyy-mm-dd" >
+														<span class="input-icon">
+														<input class="form-control datepicker" name="appdate" required="required" data-date-format="yyyy-mm-dd" style="border-color: #2dc3cc">
+														<i class="fa fa-calendar"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="Appointmenttime"style="color: black">
 															Hora
 														</label>
-														<input class="form-control" name="apptime" id="timepicker1" required="required">Ejemplo : 10:00 PM
+														<span class="input-icon">
+														<input class="form-control" name="apptime" id="timepicker1" required="required"style="border-color: #2dc3cc">Ejemplo : 10:00 PM
+														<i class="fa fa-clock-o"></i></span>
 													</div>
 													<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
 														Reservar Cita

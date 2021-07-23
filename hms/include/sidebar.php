@@ -9,7 +9,7 @@
 						</div>
 						<ul class="main-navigation-menu">
 							<li>
-								<a href="dashboard.php">
+								<a href="inicio.php">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-home"></i>
@@ -21,7 +21,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="book-appointment.php">
+								<a href="reservar-cita.php">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-pencil-alt"></i>
@@ -34,19 +34,19 @@
 							</li>
 
 							<li>
-								<a href="appointment-history.php">
+								<a href="historial-citas.php">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Historial Paciente </span>
+											<span class="title"> Historial Paciente - Citas</span>
 										</div>
 									</div>
 								</a>
 							</li>
 <li>
-								<a href="manage-medhistory.php">
+								<a href="historial-medico.php">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-list"></i>

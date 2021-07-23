@@ -102,29 +102,37 @@ if (isset($_POST['submit'])) {
 														<label for="doctorDNI">
 															DNI Paciente
 														</label>
+														<span class="input-icon">
 														<input type="text" name="patdni" class="form-control" placeholder="Ingrese DNI del paciente" required="true"
 														title="Solamente Números" pattern="[0123456789]+" maxlength="8" >
+														<i class="fa fa-book"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="doctorname">
 															Nombre Paciente
 														</label>
+														<span class="input-icon">
 														<input type="text" name="patname" class="form-control" placeholder="Ingrese nombre completo del paciente" 
 														required="true" title="Solamente letras de A Z" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+">
+														<i class="fa fa-user"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="fess">
 															Contacto Paciente
 														</label>
+														<span class="input-icon">
 														<input type="text" name="patcontact" class="form-control" placeholder="Número de telefono del paciente" 
 														required="true" maxlength="9" pattern="[0-9]+" title="Solamente Números">
+														<i class="fa fa-phone"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="fess">
 															Email Paciente
 														</label>
+														<span class="input-icon">
 														<input type="email" id="patemail" name="patemail" class="form-control" placeholder="Ingrese email del paciente" required="true" onBlur="userAvailability()">
 														<span id="user-availability-status1" style="font-size:12px;"></span>
+														<i class="fa fa-envelope"></i></span>
 													</div>
 													<div class="form-group">
 														<label class="block" style="color: black">
@@ -145,21 +153,27 @@ if (isset($_POST['submit'])) {
 														<label for="address">
 															Dirección Paciente
 														</label>
+														<span class="input-icon">
 														<textarea name="pataddress" class="form-control" style="border-color: #2dc3cc"
-														placeholder="Dirección actual del paciente" required="true"></textarea>
+														placeholder="   Dirección actual del paciente" required="true"></textarea>
+														<i class="fa fa-map-marker"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="fess">
 															Edad Paciente
 														</label>
+														<span class="input-icon">
 														<input type="number" name="patage" class="form-control" placeholder="Edad del paciente" required="true">
+														<i class="fa fa-calendar"></i></span>
 													</div>
 													<div class="form-group">
 														<label for="fess">
 															Historial Medico
 														</label>
+														<span class="input-icon">
 														<textarea type="text" name="medhis" class="form-control" style="border-color: #2dc3cc"
-														placeholder="Ingrese el historial médico del paciente (si corresponde)"></textarea>
+														placeholder="   Ingrese el historial médico del paciente (si corresponde)"></textarea>
+														<i class="fa fa-user-md"></i></span>
 													</div>
 													
 													<button type="submit" name="submit" id="submit" class="btn btn-primary" style="margin-left: 40%">

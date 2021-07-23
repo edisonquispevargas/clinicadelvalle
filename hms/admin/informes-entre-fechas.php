@@ -44,7 +44,7 @@ check_login();
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle"style="color: #2dc3cc;font-weight: 600">Entre Fechas | Informe</h1>
+								<h1 class="mainTitle"style="color: #2dc3cc;font-weight: 600">Informe | Entre Fechas</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
@@ -66,7 +66,7 @@ check_login();
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600">Informe por fechas</h5>
+												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center">Informe por fechas</h5>
 											</div>
 											<div class="panel-body">
 

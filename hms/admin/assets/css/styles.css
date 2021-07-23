@@ -4646,7 +4646,6 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
   background-color: #FFFFFF;
   background-image: none;
   border: 1px solid #2dc3cc;
-  border-radius: 0 0 0 0 !important;
   color: #5b5b60;
   font-family: inherit;
   font-size: 14px;
@@ -4676,7 +4675,7 @@ textarea.underline, select.underline, input[type="text"].underline, input[type="
   border-top: none;
   border-left: none;
   border-right: none;
-  border-radius: 0 0 0 0 !important;
+
   color: #5b5b60;
   font-family: inherit;
   font-size: 14px;
@@ -4880,7 +4879,6 @@ span.input-help > input {
 select.form-control {
   background-color: #FFFFFF;
   border: 1px solid #2dc3cc;
-  border-radius: 0 0 0 0;
   color: #5b5b60;
 }
 

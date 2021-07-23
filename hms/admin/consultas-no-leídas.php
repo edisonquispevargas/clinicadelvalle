@@ -66,12 +66,12 @@ if (isset($_GET['del'])) {
 
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="over-title margin-bottom-15" style="color: black;font-weight: 800">Administrar <span class="text-bold"style="color: #2dc3cc;font-weight: 600">Consultas No Leidas</span></h5>
+								<h5 class="over-title margin-bottom-15" style="color: #2dc3cc;font-weight: 800">Administrar - <span class="text-bold"style="color: #2dc3cc;font-weight: 600">Consultas No Leidas</span></h5>
 								<table class="table table-hover" id="sample-table-1">
 									<thead>
 										<tr>
 											<th class="center">#</th>
-											<th>nombre</th>
+											<th>Nombre</th>
 											<th class="hidden-xs">Email</th>
 											<th>Contacto</th>
 											<th>Mensaje </th>

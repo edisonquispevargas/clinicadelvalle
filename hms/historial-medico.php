@@ -10,7 +10,7 @@ check_login();
 <html lang="en">
 
 <head>
-	<title>Registro Usuario | Ver Historial Medica</title>
+	<title>Usuario | Historial Medica</title>
 	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -64,9 +64,9 @@ check_login();
 											<th>Nombre Paciente</th>
 											<th>Contacto Paciente</th>
 											<th>Sexo Paciente </th>
-											<th>Fecha Creacion </th>
-											<th>Fecha Modificacion</th>
-											<th>Accion</th>
+											<th>Fecha Creación </th>
+											<th>Fecha Modificación</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -86,7 +86,7 @@ check_login();
 												</td>
 												<td>
 
-													<a href="view-medhistory.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
+													<a href="vista-historiaMed.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
 
 												</td>
 											</tr>
