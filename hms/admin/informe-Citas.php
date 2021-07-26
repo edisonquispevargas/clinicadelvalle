@@ -10,7 +10,7 @@ check_login();
 <html lang="en">
 
 <head>
-	<title> Informe | Admin</title>
+	<title> Informe </title>
 	<link rel="shortcut icon" href="../../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -44,7 +44,7 @@ check_login();
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle"style="color: #2dc3cc;font-weight: 600">Entre Fechas | Informe</h1>
+								<h1 class="mainTitle"style="color: #2dc3cc;font-weight: 600"> Informe de Citas </h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
@@ -70,7 +70,7 @@ check_login();
 											</div>
 											<div class="panel-body">
 
-												<form role="form" method="post" action="detalles-enforme.php">
+												<form role="form" method="post" action="detalles-informeCitas.php">
 													<div class="form-group">
 														<label for="exampleInputPassword1">
 															Apartir Fecha:

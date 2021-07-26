@@ -169,18 +169,17 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="informes-entre-fechas.php">
-								<span class="title">Infrome de Fechassssssss en B/N </span>
-							</a>
-						</li>
-					</ul>
-					<ul class="sub-menu">
-						<li>
 							<a href="informe-Citas.php">
-								<span class="title">Infrome de Citas </span>
+								<span class="title">Informe de Citas </span>
+							</a>
+						</li>
+						<li>
+							<a href="informes-entre-fechas.php">
+								<span class="title">Informe de Fechas en B/N </span>
 							</a>
 						</li>
 					</ul>
+					
 				<!--<li>
 					<a href="patient-search.php">
 						<div class="item-content">
