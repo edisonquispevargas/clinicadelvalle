@@ -64,10 +64,21 @@ if (isset($_GET['del'])) {
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
 					<form role="form" method="post" name="search" action="agregar-doctor.php" class="formulariob">
-                        <p style="color:green;font-size: 15px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
-                            <?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 
-                            <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar Doctor">
+							<?php 	if($_SESSION['msg']){
+							echo "
+								<div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+								<h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+								".$_SESSION['msg']."
+			                    ".($_SESSION['msg']= "")."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
+                           <!-- <input type="submit" name="search" id="submit" class="btn btn-success"  value="Agregar Doctor">-->
+                        <a href="agregar-doctor.php"  method="post" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar Doctor</a>
 
                         </form>
 						<div class="row">
@@ -105,8 +116,11 @@ if (isset($_GET['del'])) {
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<a href="edit-doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 
-														<a href="Administrar-doctores.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Está seguro de que desea eliminar?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>
-													</div>
+														<a href="Administrar-doctores.php?id=<?php echo $row['id'] ?>&del=delete"
+														 onClick="return confirm('Está seguro de que desea eliminar?')"
+														 class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>
+                                                       <!-- <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>-->
+                                                    </div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">
 														<div class="btn-group" dropdown is-open="status.isopen">
 															<button type="button" class="btn btn-primary btn-o btn-sm dropdown-toggle" dropdown-toggle>
@@ -185,7 +199,7 @@ if (isset($_GET['del'])) {
 			Main.init();
 			FormElements.init();
 		});
-	</script>
+		</script>
 	<!-- end: JavaScript Event Handlers for this page -->
 	<!-- end: CLIP-TWO JAVASCRIPTS -->
 </body>

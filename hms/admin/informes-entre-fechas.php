@@ -66,7 +66,7 @@ check_login();
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center">Informe por fechas</h5>
+												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center">Informe por fechas - Pacientes</h5>
 											</div>
 											<div class="panel-body">
 
@@ -88,7 +88,8 @@ check_login();
 
 
 													<button type="submit" name="submit" id="submit"
-													 class="btn btn-primary" style="margin-left: 40%">
+													 class="btn btn-primary" style="margin-left: 40%" ><i class="fa fa-check-square-o"
+                                                        ></i>
 														Agregar
 													</button>
 												</form>

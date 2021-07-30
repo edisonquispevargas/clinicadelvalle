@@ -37,21 +37,35 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../css/stilo_login_doctor.css">
         <link rel="stylesheet" href="../../plugins/sweetalert2/sweetalert2.min.css">
-        
+
+        <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+
         <link rel="stylesheet" type="text/css" href="fuentes/iconic/css/material-design-iconic-font.min.css">
-        
+
     </head>
-    
     <body>
-    
-      <div class="container-login">
+    <?php
+    if($_SESSION['errmsg']){
+        echo "
+            <div class='alert alert-danger alert-dismissible' style='width: 50%; font-size: 14px;margin-left: 25%;margin-bottom: -8%;
+            margin-top: 2%;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-warning'></i>   Error!</h4>
+              ".$_SESSION['errmsg']."
+              ".($_SESSION['errmsg']= "")."
+            </div>
+          ";
+        unset($_SESSION['error']);
+    }
+
+    ?>
+    <div class="container-login">
         <div class="wrap-login">
             
             <form class="login-form validate-form" id="formLogin" action="" method="post">
             <fieldset>
             <p style="font-size: 26px;margin-top:-50px; color: #2dc3cc;text-align: center;text-shadow: 2px 2px 2px black;font-weight: 600;">SESION ADMIN</p>
-                <p style="font-size: 13px; color: #2d2d2d">Ingrese su Usuario y Contraseña para Iniciar Sesion.</p>
-				<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg'] = ""); ?></span>
+                <p style="font-size: 13px; color: #2d2d2d">Ingrese su Usuario y Contraseña para Iniciar Sesión.</p>
                 <div class="wrap-input100" data-validate = "Usuario incorrecto">
                     <input class="input100" type="text" id="usuario" name="username" required  placeholder="Usuario">
                     <span class="focus-efecto"></span>
@@ -65,15 +79,13 @@ if (isset($_POST['submit'])) {
                 <div class="container-login-form-btn">
                     <div class="wrap-login-form-btn">
                         <div class="login-form-bgbtn"></div>
-                        <button type="submit" name="submit" class="login-form-btn">Iniciar Sesion <i class="fa fa-arrow-circle-right"></i></button>
+                        <button type="submit" name="submit" class="login-form-btn">Iniciar Sesion <i class=""></i></button>
                     </div>
                 </div>
                 </fieldset>
             </form>
         </div>
-    </div>     
-        
-        
+    </div>   
      <script src="../jquery/jquery-3.3.1.min.js"></script>    
      <script src="../bootstrap/js/bootstrap.min.js"></script>    
      <script src="../popper/popper.min.js"></script>    

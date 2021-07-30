@@ -18,8 +18,9 @@ if (isset($_POST['submit'])) {
 	$sql = mysqli_query($con, "insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,dnipaciente)
 	values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis','$patdni')");
 	if ($sql) {
-		echo "<script>alert('Paciente agregado exitosamente');</script>";
-		echo "<script>window.location.href ='Gestionar-paciente.php'</script>";
+		$_SESSION['msg'] = "Paciente agregado exitosamente!!";
+		/*echo "<script>alert('Paciente agregado exitosamente');</script>";
+		echo "<script>window.location.href ='Gestionar-paciente.php'</script>";*/
 	}
 }
 ?>
@@ -88,6 +89,18 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
+							<?php 	if($_SESSION['msg']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -139,13 +152,13 @@ if (isset($_POST['submit'])) {
 															Sexo:
 														</label>
 														<div class="clip-radio radio-primary">
-															<input type="radio" id="rg-female" name="gender" value="Femenino" style="border-color: #2dc3cc">
+															<input type="radio" id="rg-female" name="gender" value="Masculino" style="border-color: #2dc3cc">
 															<label for="rg-female">
-																Femenino
+															Masculino
 															</label>
-															<input type="radio" id="rg-male" name="gender" value="Masculino" >
+															<input type="radio" id="rg-male" name="gender" value="Femenino" >
 															<label for="rg-male">
-																Masculino
+																Femenino
 															</label>
 														</div>
 													</div>
@@ -175,10 +188,12 @@ if (isset($_POST['submit'])) {
 														placeholder="   Ingrese el historial médico del paciente (si corresponde)"></textarea>
 														<i class="fa fa-user-md"></i></span>
 													</div>
-													
-													<button type="submit" name="submit" id="submit" class="btn btn-primary" style="margin-left: 40%">
-														Agregar
-													</button>
+										
+													<div class="modal-footer">
+													<a href="Gestionar-paciente.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" id="submit" class="btn btn-success btn-flat"><i class="fa fa-save"></i> Guardar</button>
+													</form>
+													</div>
 												</form>
 											</div>
 										</div>

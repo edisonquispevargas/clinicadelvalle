@@ -101,7 +101,7 @@ check_login();
 														<td>
 
 															<a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
-                                                            <a href="manage-doctors.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Esta seguro de que desea eliminar al paciente?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>
+                                                            <!--<a href="manage-doctors.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Esta seguro de que desea eliminar al paciente?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-trash fa fa-white"></i></a>-->
 														</td>
 													</tr>
 												<?php

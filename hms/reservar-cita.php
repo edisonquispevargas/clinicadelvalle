@@ -16,7 +16,8 @@ if (isset($_POST['submit'])) {
 	$docstatus = 1;
 	$query = mysqli_query($con, "insert into appointment(doctorSpecialization,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
 	if ($query) {
-		echo "<script>alert('Su Cita Reservada Con Exito!!');</script>";
+		/*echo "<script>alert('Su Cita Reservada Con Exito!!');</script>";*/
+		$msg = "Su Cita se reservo Con Exito!!";
 	}
 }
 ?>
@@ -96,7 +97,18 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-
+							<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">

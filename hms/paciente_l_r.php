@@ -50,16 +50,33 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login y Registro</title>
     <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,
-                100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/stilo_login_paciente.css">
     <link rel="stylesheet" href="assets/css/stilos.css">
     <link rel="stylesheet" href="../css/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     
-</head>
+</head>}
+
+<?php
+if($_SESSION['errmsg']){
+    echo "
+            <div class='alert alert-danger alert-dismissible' style='width: 40%; font-size: 14px;margin-left: 10%;margin-bottom: -7%;
+            margin-top: 2%;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-warning'></i>   Error!</h4>
+              ".$_SESSION['errmsg']."
+              ".($_SESSION['errmsg']= "")."
+            </div>
+          ";
+    unset($_SESSION['error']);
+}
+?>
 <body>
     <main>
         <div class="contenedor__todo">
@@ -81,14 +98,13 @@ session_start();
 
                 <!--login-->
                 <form class="formulario__login" method="post">
-                    <h2>Iniciar sesion</h2>
+                    <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="Correo Electronico" name="username"  id="email" required>
                     <input type="password" placeholder="Contraseña" name="password" id="username" required><br><br>
                     <a href="" style="font-size: 12px; margin-top: 35px;color: blue;">
 									¿Olvidaste tu Contraseña?
 								</a><br>
                     <button name="submit" type="submit">Ingresar</button><br><br>
-                    <span style="color:red;font-weight: 200;font-size: 14px;margin-left: 20%;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
                 </form>
             
               <!--login-->
@@ -130,5 +146,28 @@ session_start();
 
     </main>
     <script src="../js/script.js"></script>
+<script src="../jquery/jquery-3.3.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../popper/popper.min.js"></script>
+
+<script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="../codigo.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/modernizr/modernizr.js"></script>
+<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="vendor/switchery/switchery.min.js"></script>
+<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+<script src="assets/js/login.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        Main.init();
+        Login.init();
+    });
+</script>
 </body>
 </html>

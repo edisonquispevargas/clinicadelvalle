@@ -8,7 +8,9 @@ $id = intval($_GET['id']); // get value
 if (isset($_POST['submit'])) {
 	$docspecialization = $_POST['doctorspecilization'];
 	$sql = mysqli_query($con, "update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
-	$_SESSION['msg'] = "Especialidad actualizada con Éxito!!";
+	if ($sql) {
+		$msg = "Especialidad actualizada con Éxito!!";
+	}
 }
 
 ?>
@@ -65,7 +67,19 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-
+							
+							<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 								<div class="row margin-top-30">
 									<div class="col-lg-6 col-md-12">
 										<div class="panel panel-white">
@@ -90,15 +104,12 @@ if (isset($_POST['submit'])) {
 														<i class="fa fa-user-md"></i></span>
 
 													</div>
-
-
-
-
-													<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
-														Aceptar
-													</button><br>
-													<p style="color:green;font-size: 15px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
-													<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
+													<div class="">
+													<a href="especialidad-medica.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" class="btn btn-success btn-flat"style='float: right;'><i class="fa fa-check-square-o"
+													></i> Aceptar</button>
+													</form>
+													</div>
 												</form>
 											</div>
 										</div>

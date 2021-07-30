@@ -64,9 +64,18 @@ if (isset($_GET['cancel'])) {
 
 						<div class="row">
 							<div class="col-md-12">
-
-								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']); ?>
-									<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
+                                <?php 	if($_SESSION['msg']){
+                                    echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+                                    unset($_SESSION['success']);
+                                }
+                                ?>
 								<table class="table table-hover" id="sample-table-1">
 									<thead>
 										<tr>
@@ -114,7 +123,7 @@ if (isset($_GET['cancel'])) {
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) { ?>
-															<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estás seguro de que deseas cancelar esta cita ?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar</a>
+															<a href="historial-de-citas.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estás seguro de que deseas cancelar esta cita ?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar</a>
 														<?php } else {
 
 															echo "Cancelado";

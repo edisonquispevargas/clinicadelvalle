@@ -60,8 +60,18 @@ if (isset($_GET['del'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-                                <p style="color:green;font-size: 15px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
-                                    <?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
+							<?php 	if($_SESSION['msg']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 								<h5 class="over-title margin-bottom-15"style="color: #0a6aa1; margin-left: 42%"> <span class="text-bold"> Gestionar Paciente</span></h5>
 
                                 <form role="form" method="post" name="search" action="buscar.php" class="formulariob">
@@ -73,8 +83,8 @@ if (isset($_GET['del'])) {
 								<form role="form" method="post" name="search" action="agregar-paciente.php" class="formulario">
 
 
-                            <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar nuevo Paciente">
-
+                           <!-- <input type="submit" name="search" id="submit" class="btn btn-success" value="Agregar nuevo Paciente">-->
+							<a href="agregar-paciente.php"  method="post" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar Paciente</a>
                         </form>
 
 								<table class="table table-hover" id="sample-table-1">

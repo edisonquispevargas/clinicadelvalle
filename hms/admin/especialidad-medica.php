@@ -68,29 +68,42 @@ if (isset($_GET['del'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
+							
+		<?php 	if($_SESSION['msg']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 
 								<div class="row margin-top-30">
 									<div class="col-lg-6 col-md-12">
-										<div class="panel panel-white"style="background: #536bf1">
+										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title" style="color: #FFFFFF;font:500 18px/1 'Roboto',sans-serif;text-align: center;">Especialidad Doctor</h5>
+												<h5 class="panel-title" style="color: #2dc3cc;font:500 18px/1 'Roboto',sans-serif;text-align: center;">Especialidad Doctor</h5>
 											</div>
 											<div class="panel-body">
 												
 												<form role="form" name="dcotorspcl" method="post">
 													<div class="form-group">
-														<label for="exampleInputEmail1" style="color: #FFFFFF;font:400 13px/1 'Roboto',sans-serif; ">
+														<label for="exampleInputEmail1" style="font:400 13px/1 'Roboto',sans-serif; ">
 															Ingrese una Especialidad
 														</label>
 														<span class="input-icon">
 														<input type="text" name="doctorspecilization" required class="form-control" style="border-radius: 10px">
 														<i class="fa fa-user-md"></i></span>
 													</div>
-													<button type="submit" name="submit" class="btn btn-dark" style="margin-left: 40%;color: black">
-														Aceptar
-													</button>
-													<p style="color: #FFFFFF;font:400 13px/1 'Roboto',sans-serif; text-align: center; margin-top: 15px"><?php echo htmlentities($_SESSION['msg']); ?>
-													<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
+                                                    <div class="">
+                                                        <button type="submit" name="submit" class="btn btn-success btn-flat"style='margin-left: 40%'><i class="fa fa-check-square-o"
+                                                            ></i> Aceptar</button>
+                                                </form>
+                                            </div>
 												</form>
 											</div>
 										</div>

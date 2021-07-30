@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 	$medhis = $_POST['medhis'];
 	$sql = mysqli_query($con, "update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis',dnipaciente='$patdni' where ID='$eid'");
 	if ($sql) {
-        $msg = "Datos actualizados con éxito !!";
+        $msg = "Datos del paciente actualizados con éxito !!";
 	}
 }
 ?>
@@ -69,13 +69,22 @@ if (isset($_POST['submit'])) {
 							</ol>
 						</div>
 					</section>
-					<div class="container-fluid container-fullw bg-white">
-						<div class="row">
+							<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+							<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 							<div class="col-md-12">
-                                <h5 style="color: green; font-size:15px;font-weight: 600; ">
-                                    <?php if ($msg) {
-                                        echo htmlentities($msg);
-                                    } ?> </h5>
+                                
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -83,6 +92,7 @@ if (isset($_POST['submit'])) {
 												<h5 class="panel-title"style="color: #2dc3cc;font-weight: 600; margin-left: 40%">Modificar Paciente</h5>
 											</div>
 											<div class="panel-body">
+													
 												<form role="form" name="" method="post">
 													<?php
 													$eid = $_GET['editid'];
@@ -112,7 +122,7 @@ if (isset($_POST['submit'])) {
 																Contacto Paciente
 															</label>
 															<span class="input-icon">
-															<input type="text" name="patcontact" class="form-control" value="<?php echo $row['PatientContno']; ?>" required="true" maxlength="10" pattern="[0-9]+">
+															<input type="text" name="patcontact" class="form-control" value="<?php echo $row['PatientContno']; ?>" required="true" maxlength="9" pattern="[0-9]+">
 															<i class="fa fa-phone"></i></span>
 														</div>
 														<div class="form-group">
@@ -169,9 +179,12 @@ if (isset($_POST['submit'])) {
 															<i class="fa fa-calendar"></i></span>
 														</div>
 													<?php } ?>
-													<button type="submit" name="submit" id="submit" class="btn btn-primary"style="margin-left: 40%">
-														Modificar
-													</button>
+								
+													<div class="modal-footer">
+													<a href="Gestionar-paciente.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
+													</form>
+													</div>
 												</form>
 											</div>
 										</div>

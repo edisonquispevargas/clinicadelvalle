@@ -67,11 +67,19 @@ if (isset($_POST['submit'])) {
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
+						<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 							<div class="col-md-12">
-                                <h5 style="color: green; font-size:18px; ">
-                                    <?php if ($msg) {
-                                        echo htmlentities($msg);
-                                    } ?> </h5>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -88,6 +96,7 @@ if (isset($_POST['submit'])) {
 													<!--<p><b>Fecha Ultima Actualizacion: </b><?php echo htmlentities($data['updationDate']); ?></p>-->
 													<?php } ?>
 													<hr />
+													
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="DoctorSpecialization">
@@ -166,10 +175,14 @@ if (isset($_POST['submit'])) {
 													<?php } ?>
 
 
-													<button type="submit" name="submit" class="btn btn-primary"style="margin-left: 40%">
+													<!--<button type="submit" name="submit" class="btn btn-primary"style="margin-left: 40%">
 														Modificar
-													</button>
+													</button>-->
+													<div class="modal-footer">
+													<a href="inicio.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
 													</form>
+													</div>
 											</div>
 										</div>
 									</div>

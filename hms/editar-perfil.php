@@ -71,14 +71,25 @@ if (isset($_POST['submit'])) {
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
+					
 						<div class="row">
+						<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 							<div class="col-md-12">
-								<h5 style="color: green; font-size:15px;font-weight: 600; ">
-									<?php if ($msg) {
-										echo htmlentities($msg);
-									} ?> </h5>
+								
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
+									
 										<div class="panel panel-white">
 											<div class="panel-heading">
 												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center;">Modificar Perfil</h5>
@@ -90,10 +101,11 @@ if (isset($_POST['submit'])) {
 												?>
 													<h4><?php echo htmlentities($data['fullName']); ?> - Perfil</h4>
 													<p><b> Fecha Registro Perfil: </b><?php echo htmlentities($data['regDate']); ?></p>
-													<?php if ($data['updationDate']) { ?>
+													<!--<?php if ($data['updationDate']) { ?>
 														<p><b> Fecha Ultima Actualizacion Perfil:  </b><?php echo htmlentities($data['updationDate']); ?></p>
-													<?php } ?>
+													<?php } ?>-->
 													<hr />
+													
 													<form role="form" name="edit" method="post">
 													<div class="form-group">
 															<label for="fname">
@@ -159,12 +171,14 @@ if (isset($_POST['submit'])) {
 															</label>
 															<span class="input-icon">
 															<input type="email" name="uemail" class="form-control" readonly="readonly" style="border-color: #2dc3cc" value="<?php echo htmlentities($data['email']); ?>">
-															<a href="change-emaild.php">Modificar el Email</a>
+															<a href="modificar-email.php">Modificar  Email</a>
 															<i class="fa fa-envelope"></i></span>
 														</div>
-														<button type="submit" name="submit" class="btn btn-primary" style="margin-left: 40%">
-															Modificar
-														</button>
+														<div class="modal-footer">
+													<a href="inicio.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
+													</form>
+													</div>
 													</form>
 												<?php } ?>
 											</div>

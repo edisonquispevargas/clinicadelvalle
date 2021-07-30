@@ -12,8 +12,9 @@ if (isset($_POST['update'])) {
 	$isread = 1;
 	$query = mysqli_query($con, "update tblcontactus set  AdminRemark='$adminremark',IsRead='$isread' where id='$qid'");
 	if ($query) {
-		echo "<script>alert('Comentario de administrador actualizado correctamente.');</script>";
-		echo "<script>window.location.href ='consultas-leídas.php'</script>";
+	/*	echo "<script>alert('Comentario de administrador actualizado correctamente.');</script>";
+		echo "<script>window.location.href ='consultas-leídas.php'</script>";*/
+		$_SESSION['msg'] = "Comentario de administrador actualizado correctamente.";
 	}
 }
 ?>
@@ -68,7 +69,18 @@ if (isset($_POST['update'])) {
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
-
+					<?php 	if($_SESSION['msg']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 
 						<div class="row">
 							<div class="col-md-12">

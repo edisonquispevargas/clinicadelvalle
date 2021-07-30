@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-	<title>User | Modificar Perfil</title>
+	<title>User | Modificar gmail</title>
 	<link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle">Usario | Modificar Perfil</h1>
+								<h1 class="mainTitle" style="color: #2dc3cc;font-weight: 600;">Usario | Modificar Perfil</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
@@ -67,16 +67,28 @@ if (isset($_POST['submit'])) {
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-								<h5 style="color: green; font-size:20px;font-weight: 600; ">
-									<?php if ($msg) {
-										echo htmlentities($msg);
-									} ?> </h5>
+							<?php
+							if($msg){
+							echo "
+								<div class='alert alert-success alert-dismissible' style='background: #00a65a;color: #ffffff;'>
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>x</button>
+								<h4 style='color: #ffffff;font-weight: 600;'><i class='icon fa fa-check'></i> ¡Proceso Exitoso!</h4>
+								".htmlentities($msg)."
+								</div>
+							";
+							unset($_SESSION['success']);
+							}
+						?>
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title">Modificar Perfil</h5>
+												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;text-align: center;">Modificar Perfil</h5>
 											</div>
+											<!--<h5 style="color: green; font-size:15px;font-weight: 600; text-align: center;">
+									<?php if ($msg) {
+										echo htmlentities($msg);
+									} ?> </h5>-->
 											<div class="panel-body">
 												<form name="registration" id="updatemail" method="post">
 													<div class="form-group">
@@ -87,9 +99,15 @@ if (isset($_POST['submit'])) {
 
 														<span id="user-availability-status1" style="font-size:12px;"></span>
 													</div>
-													<button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
+													<!--<button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
 														Modificar
-													</button>
+													</button>-->
+
+													<div class="modal-footer">
+													<a href="editar-perfil.php"  method="post" class="btn btn-default btn-flat pull-left"><i class="fa fa-close"></i> Regresar</a>
+													<button type="submit" name="submit" id="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-save"></i> Modificar</button>
+													</form>
+													</div>
 												</form>
 
 											</div>

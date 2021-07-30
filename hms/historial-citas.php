@@ -63,10 +63,19 @@ if (isset($_GET['cancel'])) {
 
 
 						<div class="row">
+						<?php 	if($_SESSION['msg']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg']."
+			  ".($_SESSION['msg']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 							<div class="col-md-12">
-
-								<p style="color:green;font-size: 20px;font-weight: 600;"><?php echo htmlentities($_SESSION['msg']); ?>
-									<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 								<table class="table table-hover" id="sample-table-1">
 									<thead>
 										<tr>
@@ -104,13 +113,13 @@ if (isset($_GET['cancel'])) {
 													}
 
 													if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 0)) {
-														echo "Cancelar X Doctor";
+														echo "Cancelado X Doctor";
 													}
 													?></td>
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) { ?>
-															<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estas Seguro de que Quieres Cancelar Esta Cita?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar Cita</a>
+															<a href="historial-citas.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('¿Estas Seguro de que Quieres Cancelar Esta Cita?')" class="btn btn-transparent btn-xs tooltips" title="Cancelar Cita" tooltip-placement="top" tooltip="Remove">Cancelar Cita</a>
 														<?php } else {
 															echo "Cancelado";
 														} ?>

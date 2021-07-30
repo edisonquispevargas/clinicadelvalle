@@ -49,13 +49,26 @@ exit();
         <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../css/stilo_login_doctor.css">
         <link rel="stylesheet" href="../../plugins/sweetalert2/sweetalert2.min.css">
-        
+        <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="fuentes/iconic/css/material-design-iconic-font.min.css">
         
     </head>
     
     <body>
-    
+    <?php
+    if($_SESSION['errmsg']){
+        echo "
+            <div class='alert alert-danger alert-dismissible' style='width: 50%; font-size: 14px;margin-left: 25%;margin-bottom: -7%;
+            margin-top: 2%;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-warning'></i>   Error!</h4>
+              ".$_SESSION['errmsg']."
+              ".($_SESSION['errmsg']= "")."
+            </div>
+          ";
+        unset($_SESSION['error']);
+    }
+    ?>
       <div class="container-login">
         <div class="wrap-login">
             
@@ -63,7 +76,6 @@ exit();
             <fieldset>
             <p style="font-size: 26px;margin-top:-50px; color: #2dc3cc;text-align: center;text-shadow: 2px 2px 2px black;font-weight: 600;">SESION DOCTOR</p>
                 <p style="font-size: 15px; color: #2d2d2d;">Ingrese su Usuario y Contraseña para Iniciar Sesión.</p>
-				<span style="color:red;font-weight: 600;font-size: 14px;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
                 <div class="wrap-input100" data-validate = "Usuario incorrecto">
                     <input class="input100" type="text" id="usuario" name="username" placeholder="Usuario" required>
                     <span class="focus-efecto"></span>
@@ -74,7 +86,7 @@ exit();
                     <span class="focus-efecto"></span>
                 </div>
 				
-                <a href="forgot-password.php" style="font-size: 12px; margin-top: -15px; color: blue;">
+                <a href="#" style="font-size: 12px; margin-top: -15px; color: blue;">
 									¿Olvide mi contraseña?
 								</a>
                 
@@ -90,12 +102,28 @@ exit();
     </div>     
         
         
-     <script src="../jquery/jquery-3.3.1.min.js"></script>    
-     <script src="../bootstrap/js/bootstrap.min.js"></script>    
-     <script src="../popper/popper.min.js"></script>    
-        
-     <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>    
-     <script src="../codigo.js"></script>   
-     <script src="codigo.js"></script>   
+     <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+
+    <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="../codigo.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/modernizr/modernizr.js"></script>
+    <script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="vendor/switchery/switchery.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/login.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            Main.init();
+            Login.init();
+        });
+    </script>
     </body>
 </html>

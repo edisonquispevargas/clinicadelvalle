@@ -40,19 +40,19 @@ if (isset($_POST['submit'])) {
 	<script type="text/javascript">
 		function valid() {
 			if (document.chngpwd.cpass.value == "") {
-				alert("Current Password Filed is Empty !!");
+				alert("La contraseña actual está vacía!!");
 				document.chngpwd.cpass.focus();
 				return false;
 			} else if (document.chngpwd.npass.value == "") {
-				alert("New Password Filed is Empty !!");
+				alert("La nueva contraseña está vacía !!");
 				document.chngpwd.npass.focus();
 				return false;
 			} else if (document.chngpwd.cfpass.value == "") {
-				alert("Confirm Password Filed is Empty !!");
+				alert("Confirmar  contraseña  está vacía !!");
 				document.chngpwd.cfpass.focus();
 				return false;
 			} else if (document.chngpwd.npass.value != document.chngpwd.cfpass.value) {
-				alert("Password and Confirm Password Field do not match  !!");
+				alert("La contraseña y el campo Confirmar contraseña no coinciden!!");
 				document.chngpwd.cfpass.focus();
 				return false;
 			}

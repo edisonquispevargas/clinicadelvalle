@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 		$con = mysqli_query($con, "update admin set password='" . $_POST['npass'] . "', updationDate='$currentTime' where username='" . $_SESSION['login'] . "'");
 		$_SESSION['msg1'] = "Contraseña cambiada con éxito !!";
 	} else {
-		$_SESSION['msg1'] = "La contraseña anterior no coincide !!";
+		$_SESSION['msg5'] = "La contraseña anterior no coincide !!";
 	}
 }
 ?>
@@ -46,15 +46,15 @@ if (isset($_POST['submit'])) {
 	<script type="text/javascript">
 		function valid() {
 			if (document.chngpwd.cpass.value == "") {
-				alert("La contraseña actual archivada está vacía !!");
+				alert("La contraseña actual  está vacía !!");
 				document.chngpwd.cpass.focus();
 				return false;
 			} else if (document.chngpwd.npass.value == "") {
-				alert("La nueva contraseña archivada está vacía !!");
+				alert("La nueva contraseña está vacía !!");
 				document.chngpwd.npass.focus();
 				return false;
 			} else if (document.chngpwd.cfpass.value == "") {
-				alert("Confirmar que la contraseña archivada está vacía !!");
+				alert("Confirmar que la contraseña  está vacía !!");
 				document.chngpwd.cfpass.focus();
 				return false;
 			} else if (document.chngpwd.npass.value != document.chngpwd.cfpass.value) {
@@ -99,8 +99,32 @@ if (isset($_POST['submit'])) {
 					<!-- start: BASIC EXAMPLE -->
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
+						<?php 
+					 if(isset($_SESSION['msg5'])){
+						echo "
+						  <div class='alert alert-danger alert-dismissible' >
+							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							<h4><i class='icon fa fa-warning'></i> Error!</h4>
+							".$_SESSION['msg5']."
+							".($_SESSION['msg5']= "")."
+						  </div>
+						";
+						unset($_SESSION['error']);
+					  }
+					
+					if($_SESSION['msg1']){
+          echo "
+            <div class='alert alert-success alert-dismissible'style='background: #00a65a;color: #ffffff;'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true' style='color: black;'>&times;</button>
+              <h4 style='font-weight: 600;'><i class='icon fa fa-check'></i>  ¡Proceso Exitoso!</h4>
+              ".$_SESSION['msg1']."
+			  ".($_SESSION['msg1']= "")."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
 							<div class="col-md-12">
-
 								<div class="row margin-top-30">
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
@@ -108,8 +132,6 @@ if (isset($_POST['submit'])) {
 												<h5 class="panel-title" style="color: #2dc3cc;font-weight: 600;margin-left: 35%">Cambiar Contraseña</h5>
 											</div>
 											<div class="panel-body">
-												<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']); ?>
-													<?php echo htmlentities($_SESSION['msg1'] = ""); ?></p>
 												<form role="form" name="chngpwd" method="post" onSubmit="return valid();">
 													<div class="form-group">
 														<label for="exampleInputEmail1">
